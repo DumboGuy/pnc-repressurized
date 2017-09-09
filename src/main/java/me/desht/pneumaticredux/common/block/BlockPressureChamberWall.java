@@ -20,7 +20,7 @@ public class BlockPressureChamberWall extends BlockPressureChamberWallBase {
         }
     }
 
-    private static final PropertyEnum<EnumWallState> WALL_STATE = PropertyEnum.create("wallState", EnumWallState.class);
+    private static final PropertyEnum<EnumWallState> WALL_STATE = PropertyEnum.create("wall_state", EnumWallState.class);
 
     BlockPressureChamberWall() {
         super("pressure_chamber_wall");

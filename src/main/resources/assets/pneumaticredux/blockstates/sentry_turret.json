@@ -3,7 +3,7 @@
     "defaults": {
         "textures": {},
         "custom": { "flip-v" : true},
-        "model": "pneumaticcraft:sentry_turret.obj"
+        "model": "pneumaticredux:sentry_turret.obj"
     },
 	"variants": {
 		"normal": [{

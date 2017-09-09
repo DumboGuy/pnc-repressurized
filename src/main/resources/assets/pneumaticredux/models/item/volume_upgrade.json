@@ -1,7 +1,7 @@
 {
     "parent": "builtin/generated",
     "textures": {
-        "layer0": "pneumaticcraft:items/upgrades/volume"
+        "layer0": "pneumaticredux:items/upgrades/volume"
     },
     "display": {
         "thirdperson": {

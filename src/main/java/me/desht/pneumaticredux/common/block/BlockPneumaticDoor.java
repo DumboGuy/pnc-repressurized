@@ -25,7 +25,7 @@ import java.util.Random;
 public class BlockPneumaticDoor extends BlockPneumaticCraftModeled {
     public boolean isTrackingPlayerEye;//will be true when the Pneumatic Door Base is determining if it should open the door dependant
     //on the player watched block.
-    private static final PropertyBool TOP_DOOR = PropertyBool.create("topDoor");
+    private static final PropertyBool TOP_DOOR = PropertyBool.create("top_door");
 
     BlockPneumaticDoor() {
         super(Material.IRON, "pneumatic_door");

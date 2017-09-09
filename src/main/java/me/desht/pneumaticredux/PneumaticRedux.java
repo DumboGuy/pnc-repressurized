@@ -28,6 +28,7 @@ import me.desht.pneumaticredux.common.semiblock.SemiBlockInitializer;
 import me.desht.pneumaticredux.common.sensor.SensorHandler;
 import me.desht.pneumaticredux.common.thirdparty.ThirdPartyManager;
 import me.desht.pneumaticredux.common.tileentity.TileEntityRegistrator;
+import me.desht.pneumaticredux.common.util.OreDictionaryHelper;
 import me.desht.pneumaticredux.common.util.Reflections;
 import me.desht.pneumaticredux.common.worldgen.WorldGeneratorPneumaticCraft;
 import me.desht.pneumaticredux.lib.ModIds;
@@ -72,8 +73,12 @@ public class PneumaticRedux {
 
     public static boolean isNEIInstalled;
 
+    static {
+        FluidRegistry.enableUniversalBucket();
+    }
+
     @EventHandler
-    public void PreInit(FMLPreInitializationEvent event) {
+    public void onPreInit(FMLPreInitializationEvent event) {
         logger = event.getModLog();
 
         event.getModMetadata().version = Versions.fullVersionString();
@@ -88,21 +93,19 @@ public class PneumaticRedux {
 
         NetworkRegistry.INSTANCE.registerGuiHandler(instance, proxy);
         tabPneumaticRedux = new CreativeTabPneumaticCraft("tabPneumaticCraft");
-        Fluids.initFluids();
+        Fluids.preInit();
 //        Blockss.init();
 //        Itemss.init();
-        HackableHandler.addDefaultEntries();
 //        ModuleRegistrator.init();
         WidgetRegistrator.init();
         ThirdPartyManager.instance().preInit();
         TileEntityRegistrator.init();
         EntityRegistrator.init();
-        SemiBlockInitializer.init();
-        CraftingRegistrator.init();
+//        SemiBlockInitializer.init();
         //TODO 1.8 fix  VillagerHandler.instance().init();
         GameRegistry.registerWorldGenerator(new WorldGeneratorPneumaticCraft(), 0);
         HeatBehaviourManager.getInstance().init();
-        SensorHandler.getInstance().init();
+//        SensorHandler.getInstance().init();
 
         proxy.preInit();
         tickHandler = new TickHandlerPneumaticCraft();
@@ -118,6 +121,12 @@ public class PneumaticRedux {
     @EventHandler
     public void load(FMLInitializationEvent event) {
         NetworkHandler.init();
+
+        Fluids.init();
+        CraftingRegistrator.init();
+        SemiBlockInitializer.init();
+        HackableHandler.addDefaultEntries();
+        SensorHandler.getInstance().init();
 
         // FIXME: port chest generator
         if (ConfigHandler.General.enableDungeonLoot) {
@@ -139,6 +148,8 @@ public class PneumaticRedux {
 //            ChestGenHooks.getInfo(ChestGenHooks.STRONGHOLD_CORRIDOR).addItem(new WeightedRandomChestContent(new ItemStack(Itemss.nukeVirus), 1, 4, 10));
 //            ChestGenHooks.getInfo(ChestGenHooks.STRONGHOLD_CROSSING).addItem(new WeightedRandomChestContent(new ItemStack(Itemss.nukeVirus), 1, 4, 10));
         }
+
+        OreDictionaryHelper.addOreDictEntries();
 
         proxy.init();
         ThirdPartyManager.instance().init();
@@ -171,15 +182,15 @@ public class PneumaticRedux {
                 PneumaticRegistry.getInstance().getItemRegistry().registerUpgradeAcceptor((IUpgradeAcceptor) block);
             }
         }
-        for (Item item : Itemss.ALL_ITEMS) {
+        for (Item item : Itemss.items) {
             if (item instanceof IUpgradeAcceptor) {
                 PneumaticRegistry.getInstance().getItemRegistry().registerUpgradeAcceptor((IUpgradeAcceptor) item);
             }
         }
     }
 
-
     public void registerFuel(final ItemStack fuelStack, final int fuelValue) {
+        // FIXME
         GameRegistry.registerFuelHandler(new IFuelHandler() {
             @Override
             public int getBurnTime(ItemStack fuel) {

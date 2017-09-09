@@ -3,7 +3,7 @@
     "defaults": {
         "textures": {},
         "custom": { "flip-v" : true},
-        "model": "pneumaticcraft:assembly_controller.obj"
+        "model": "pneumaticredux:assembly_controller.obj"
     },
 	"variants": {
 		"normal": [{

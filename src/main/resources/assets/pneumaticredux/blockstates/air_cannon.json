@@ -3,7 +3,7 @@
     "defaults": {
         "textures": {},
         "custom": { "flip-v" : true},
-        "model": "pneumaticcraft:air_cannon.obj"
+        "model": "pneumaticredux:air_cannon.obj"
     },
 	"variants": {
 		"facing": {

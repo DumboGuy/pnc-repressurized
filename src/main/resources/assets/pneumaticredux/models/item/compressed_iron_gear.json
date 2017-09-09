@@ -1,7 +1,7 @@
 {
     "parent": "builtin/generated",
     "textures": {
-        "layer0": "pneumaticcraft:items/compressed_iron_gear"
+        "layer0": "pneumaticredux:items/compressed_iron_gear"
     },
     "display": {
         "thirdperson": {

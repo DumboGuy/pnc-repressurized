@@ -5,7 +5,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidStack;
 
 public class SemiBlockActiveProvider extends SemiBlockLogistics implements ISpecificProvider {
-    public static String ID = "logistic_frame_active_provider";
+    public static final String ID = "logistic_frame_active_provider";
 
     @Override
     public int getColor() {

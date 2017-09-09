@@ -2,9 +2,9 @@ package me.desht.pneumaticredux.common;
 
 import me.desht.pneumaticredux.api.client.pneumaticHelmet.IHackableBlock;
 import me.desht.pneumaticredux.api.client.pneumaticHelmet.IHackableEntity;
-import me.desht.pneumaticredux.api.hacking.IHackingCapability;
+import me.desht.pneumaticredux.api.hacking.IHacking;
 import me.desht.pneumaticredux.client.render.pneumaticArmor.PneumaticHelmetRegistry;
-import me.desht.pneumaticredux.client.render.pneumaticArmor.hacking.CapabilityHacking;
+import me.desht.pneumaticredux.client.render.pneumaticArmor.hacking.CapabilityHackingProvider;
 import me.desht.pneumaticredux.common.util.WorldAndCoord;
 import net.minecraft.block.Block;
 import net.minecraft.entity.Entity;
@@ -50,8 +50,8 @@ public class HackTickHandler {
         if (event.phase == TickEvent.Phase.END) {
             try {
                 for (Entity entity : event.world.loadedEntityList) {
-                    if (entity.hasCapability(CapabilityHacking.HACKING_CAPABILITY, null)) {
-                        IHackingCapability hack = entity.getCapability(CapabilityHacking.HACKING_CAPABILITY, null);
+                    if (entity.hasCapability(CapabilityHackingProvider.HACKING_CAPABILITY, null)) {
+                        IHacking hack = entity.getCapability(CapabilityHackingProvider.HACKING_CAPABILITY, null);
                         hack.update(entity);
                     }
 //                    HackingEntityProperties hackingProps = (HackingEntityProperties) entity.getExtendedProperties("PneumaticCraftHacking");
@@ -72,8 +72,8 @@ public class HackTickHandler {
     }
 
     public void trackEntity(Entity entity, IHackableEntity iHackable) {
-        if (iHackable.getId() != null && entity.hasCapability(CapabilityHacking.HACKING_CAPABILITY, null)) {
-            IHackingCapability hack = entity.getCapability(CapabilityHacking.HACKING_CAPABILITY, null);
+        if (iHackable.getId() != null && entity.hasCapability(CapabilityHackingProvider.HACKING_CAPABILITY, null)) {
+            IHacking hack = entity.getCapability(CapabilityHackingProvider.HACKING_CAPABILITY, null);
             hack.addHackable(iHackable);
 //            HackingEntityProperties hackingProps = (HackingEntityProperties) entity.getExtendedProperties("PneumaticCraftHacking");
 //            if (hackingProps != null) {

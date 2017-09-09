@@ -1,7 +1,7 @@
 {
     "parent": "builtin/generated",
     "textures": {
-        "layer0": "pneumaticcraft:items/pneumatic_helmet"
+        "layer0": "pneumaticredux:items/pneumatic_helmet"
     },
     "display": {
         "thirdperson": {

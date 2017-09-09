@@ -1,7 +1,7 @@
 {
     "parent": "builtin/generated",
     "textures": {
-        "layer0": "pneumaticcraft:items/logistics_configurator"
+        "layer0": "pneumaticredux:items/logistics_configurator"
     },
     "display": {
         "thirdperson": {

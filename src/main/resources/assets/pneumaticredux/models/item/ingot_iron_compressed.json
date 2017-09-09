@@ -1,7 +1,7 @@
 {
     "parent": "builtin/generated",
     "textures": {
-        "layer0": "pneumaticcraft:items/ingot_iron_compressed"
+        "layer0": "pneumaticredux:items/ingot_iron_compressed"
     },
     "display": {
         "thirdperson": {

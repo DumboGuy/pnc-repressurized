@@ -1,7 +1,7 @@
 {
     "parent": "builtin/generated",
     "textures": {
-        "layer0": "pneumaticcraft:items/upgrades/search"
+        "layer0": "pneumaticredux:items/upgrades/search"
     },
     "display": {
         "thirdperson": {

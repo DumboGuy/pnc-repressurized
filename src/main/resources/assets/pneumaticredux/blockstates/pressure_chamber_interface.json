@@ -3,7 +3,7 @@
     "defaults": {
         "textures": {},
         "custom": { "flip-v" : true},
-        "model": "pneumaticcraft:pressure_chamber_interface.obj"
+        "model": "pneumaticredux:pressure_chamber_interface.obj"
     },
 	"variants": {
 		"facing": {

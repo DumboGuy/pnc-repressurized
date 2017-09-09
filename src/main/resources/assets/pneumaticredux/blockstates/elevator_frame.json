@@ -1,8 +1,8 @@
 {
 	"variants":{
-		"normal": { "model": "pneumaticcraft:elevator_frame" },
+		"normal": { "model": "pneumaticredux:elevator_frame" },
 		"inventory": [{
-          "model": "pneumaticcraft:elevator_frame"
+          "model": "pneumaticredux:elevator_frame"
         }]
 	}
 	

@@ -3,7 +3,7 @@
     "defaults": {
         "textures": {},
         "custom": { "flip-v" : true},
-        "model": "pneumaticcraft:elevator_base.obj"
+        "model": "pneumaticredux:elevator_base.obj"
     },
 	"variants": {
 		"normal": [{

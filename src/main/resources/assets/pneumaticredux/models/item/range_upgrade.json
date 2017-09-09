@@ -1,7 +1,7 @@
 {
     "parent": "builtin/generated",
     "textures": {
-        "layer0": "pneumaticcraft:items/upgrades/range"
+        "layer0": "pneumaticredux:items/upgrades/range"
     },
     "display": {
         "thirdperson": {

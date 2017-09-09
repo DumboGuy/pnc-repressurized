@@ -24,7 +24,7 @@ public class BlockColorHandler {
 
         final IBlockColor etchingAcidColor = (state, worldIn, pos, tintIndex) -> 0x501c00;
 
-        Minecraft.getMinecraft().getBlockColors().registerBlockColorHandler(compressedIronHeatColor, Blockss.compressedIron);
+        Minecraft.getMinecraft().getBlockColors().registerBlockColorHandler(compressedIronHeatColor, Blockss.COMPRESSED_IRON);
         Minecraft.getMinecraft().getBlockColors().registerBlockColorHandler(etchingAcidColor, Fluids.ETCHING_ACID.getBlock());
     }
 

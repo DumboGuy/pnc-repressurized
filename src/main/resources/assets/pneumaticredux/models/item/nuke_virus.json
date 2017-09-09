@@ -1,7 +1,7 @@
 {
     "parent": "builtin/generated",
     "textures": {
-        "layer0": "pneumaticcraft:items/network_components/nuke_virus"
+        "layer0": "pneumaticredux:items/network_components/nuke_virus"
     },
     "display": {
         "thirdperson": {

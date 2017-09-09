@@ -24,12 +24,14 @@ import net.minecraft.world.chunk.Chunk;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.event.world.ChunkDataEvent;
 import net.minecraftforge.event.world.ChunkEvent;
+import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
 import net.minecraftforge.registries.IForgeRegistry;
 
 import java.util.*;
 
+@Mod.EventBusSubscriber
 public class SemiBlockManager {
     private final Map<Chunk, Map<BlockPos, ISemiBlock>> semiBlocks = new HashMap<>();
     private final List<ISemiBlock> addingBlocks = new ArrayList<>();

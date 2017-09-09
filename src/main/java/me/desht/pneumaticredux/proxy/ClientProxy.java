@@ -81,10 +81,6 @@ public class ClientProxy extends CommonProxy {
         OBJLoader.INSTANCE.addDomain(Names.MOD_ID);
         ModelLoaderRegistry.registerLoader(LoaderProgrammingPuzzle.instance);
 
-        for (Fluid fluid : Fluids.FLUIDS) {
-            ModelLoader.setBucketModelDefinition(Fluids.getBucket(fluid));
-        }
-
         ClientRegistry.bindTileEntitySpecialRenderer(TileEntityPressureTube.class, new PressureTubeModuleRenderer());
 
         MinecraftForge.EVENT_BUS.register(new ClientEventHandler());
@@ -115,6 +111,8 @@ public class ClientProxy extends CommonProxy {
 
         // disabled for now, it won't work
         //        new IGWSupportNotifier();
+
+        super.preInit();
     }
 
     @Override
@@ -135,6 +133,10 @@ public class ClientProxy extends CommonProxy {
 //                }
 //            }
 //        }
+
+        for (Fluid fluid : Fluids.FLUIDS) {
+            ModelLoader.setBucketModelDefinition(Fluids.getBucket(fluid));
+        }
 
         // Only register these recipes client side, so NEI compatibility works, but drones don't lose their program when dyed.
         for (int i = 0; i < 16; i++) {
@@ -262,7 +264,7 @@ public class ClientProxy extends CommonProxy {
             ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation(item.getRegistryName(), "inventory"));
         }
 
-        for (Item item: Itemss.ALL_ITEMS) {
+        for (Item item: Itemss.items) {
             if (item.getHasSubtypes()) {
                 NonNullList<ItemStack> stacks = NonNullList.create();
                 item.getSubItems(PneumaticRedux.tabPneumaticRedux, stacks);

@@ -3,7 +3,7 @@
     "defaults": {
         "textures": {},
 		"custom": { "flip-v": true },
-        "model": "pneumaticcraft:electrostatic_compressor.obj"
+        "model": "pneumaticredux:electrostatic_compressor.obj"
     },
 	"variants": {
 		"normal": [{

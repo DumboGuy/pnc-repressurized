@@ -3,15 +3,15 @@
     "defaults": {
         "textures": {},
 		"custom": { "flip-v": true },
-        "model": "pneumaticcraft:advanced_air_compressor.obj"
+        "model": "pneumaticredux:advanced_air_compressor.obj"
     },
 	"variants": {
 	   "on":{
            "true":{
-               "model": "pneumaticcraft:advanced_air_compressor_active.obj"
+               "model": "pneumaticredux:advanced_air_compressor_active.obj"
            },
            "false":{
-               "model": "pneumaticcraft:advanced_air_compressor.obj"
+               "model": "pneumaticredux:advanced_air_compressor.obj"
            }
         },
 		"facing": {

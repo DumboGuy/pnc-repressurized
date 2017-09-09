@@ -3,7 +3,7 @@
     "defaults": {
         "textures": {},
         "custom": { "flip-v" : true},
-        "model": "pneumaticcraft:pneumatic_door.obj"
+        "model": "pneumaticredux:pneumatic_door.obj"
     },
 	"variants": {
 		"facing": {

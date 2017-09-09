@@ -1,6 +1,6 @@
 {
     "parent": "block/cube_all",
     "textures": {
-        "all": "pneumaticcraft:blocks/programmable_controller"
+        "all": "pneumaticredux:blocks/programmable_controller"
     }
 }

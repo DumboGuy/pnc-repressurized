@@ -7,14 +7,14 @@
 		"formed":{
 		      "false":{
 		          "textures":{
-		              "side": "pneumaticcraft:blocks/pressure_chamber/valve_side",
-		              "end":  "pneumaticcraft:blocks/pressure_chamber/valve"
+		              "side": "pneumaticredux:blocks/pressure_chamber/valve_side",
+		              "end":  "pneumaticredux:blocks/pressure_chamber/valve"
 		          }
 		      },
 		      "true":{
 		          "textures":{
-                      "side": "pneumaticcraft:blocks/pressure_chamber/valve_side",
-                      "end":  "pneumaticcraft:blocks/pressure_chamber/valve_formed"
+                      "side": "pneumaticredux:blocks/pressure_chamber/valve_side",
+                      "end":  "pneumaticredux:blocks/pressure_chamber/valve_formed"
                   }
 		      } 
 		},
@@ -44,8 +44,8 @@
 		},
 		"inventory": [{
           "textures":{
-              "side": "pneumaticcraft:blocks/pressure_chamber/valve_side",
-              "end":  "pneumaticcraft:blocks/pressure_chamber/valve"
+              "side": "pneumaticredux:blocks/pressure_chamber/valve_side",
+              "end":  "pneumaticredux:blocks/pressure_chamber/valve"
           }
         }]
 	}

@@ -12,6 +12,10 @@ public class EntityRing extends Entity {
     private final Entity targetEntity;
     public final int color;
 
+    public EntityRing(World world) {
+        this(world, 0, 0, 0, null, 0);
+    }
+
     public EntityRing(World par1World, double startX, double startY, double startZ, Entity targetEntity, int color) {
         super(par1World);
         posX = lastTickPosX = startX;
@@ -35,6 +39,8 @@ public class EntityRing extends Entity {
 
     @Override
     public void onUpdate() {
+        if (targetEntity == null) return;
+
         double endX = targetEntity.posX;
         double endY = targetEntity.posY;
         double endZ = targetEntity.posZ;

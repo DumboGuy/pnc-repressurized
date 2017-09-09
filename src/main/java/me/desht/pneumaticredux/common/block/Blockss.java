@@ -5,6 +5,7 @@ import me.desht.pneumaticredux.lib.Names;
 import me.desht.pneumaticredux.lib.PneumaticValues;
 import net.minecraft.block.Block;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.oredict.OreDictionary;
@@ -13,6 +14,7 @@ import net.minecraftforge.registries.IForgeRegistry;
 import java.util.ArrayList;
 import java.util.List;
 
+@Mod.EventBusSubscriber
 @GameRegistry.ObjectHolder(Names.MOD_ID)
 public class Blockss {
     @GameRegistry.ObjectHolder("pressure_tube")
@@ -54,7 +56,7 @@ public class Blockss {
     @GameRegistry.ObjectHolder("advanced_pressure_tube")
     public static final Block ADVANCED_PRESSURE_TUBE = null;
     @GameRegistry.ObjectHolder("compressed_iron_block")
-    public static final Block compressedIron = null;
+    public static final Block COMPRESSED_IRON = null;
     @GameRegistry.ObjectHolder("uv_light_box")
     public static final Block UV_LIGHT_BOX = null;
     @GameRegistry.ObjectHolder("security_station")
@@ -160,8 +162,6 @@ public class Blockss {
         registerBlock(registry, new BlockKeroseneLamp());
         if (!ConfigHandler.Advanced.disableKeroseneLampFakeAirBlock) registerBlock(registry, new BlockKeroseneLampLight());
         registerBlock(registry, new BlockSentryTurret());
-
-        OreDictionary.registerOre(Names.BLOCK_IRON_COMPRESSED, compressedIron);
 
     }
 

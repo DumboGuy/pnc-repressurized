@@ -3,7 +3,7 @@
     "defaults": {
         "textures": {},
         "custom": { "flip-v" : true},
-        "model": "pneumaticcraft:charging_station.obj"
+        "model": "pneumaticredux:charging_station.obj"
     },
 	"variants": {
 		"facing": {

@@ -1,7 +1,7 @@
 package me.desht.pneumaticredux.common.semiblock;
 
 public class SemiBlockDefaultStorage extends SemiBlockStorage {
-    public static final String ID = "logisticFrameDefaultStorage";
+    public static final String ID = "logistic_frame_default_storage";
 
     @Override
     public int getColor() {

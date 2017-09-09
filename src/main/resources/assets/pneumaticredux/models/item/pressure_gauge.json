@@ -1,7 +1,7 @@
 {
     "parent": "builtin/generated",
     "textures": {
-        "layer0": "pneumaticcraft:items/pressure_gauge"
+        "layer0": "pneumaticredux:items/pressure_gauge"
     },
     "display": {
         "thirdperson": {

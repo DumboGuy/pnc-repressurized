@@ -1,9 +1,9 @@
 package me.desht.pneumaticredux.client.render.pneumaticArmor;
 
 import me.desht.pneumaticredux.api.client.pneumaticHelmet.*;
-import me.desht.pneumaticredux.api.hacking.IHackingCapability;
+import me.desht.pneumaticredux.api.hacking.IHacking;
 import me.desht.pneumaticredux.client.render.pneumaticArmor.blockTracker.BlockTrackEntryList;
-import me.desht.pneumaticredux.client.render.pneumaticArmor.hacking.CapabilityHacking;
+import me.desht.pneumaticredux.client.render.pneumaticArmor.hacking.CapabilityHackingProvider;
 import me.desht.pneumaticredux.lib.Log;
 import net.minecraft.block.Block;
 import net.minecraft.entity.Entity;
@@ -52,8 +52,8 @@ public class PneumaticHelmetRegistry implements IPneumaticHelmetRegistry {
 
     @Override
     public void addHackable(Block block, Class<? extends IHackableBlock> iHackable) {
-        if (block == null) throw new NullPointerException("Block is null!");
-        if (iHackable == null) throw new NullPointerException("IHackableBlock is null!");
+        if (block == null) throw new NullPointerException("Block is null! class = " + iHackable);
+        if (iHackable == null) throw new NullPointerException("IHackableBlock is null! block = " + block.getRegistryName());
 
         if (Block.class.isAssignableFrom(iHackable)) {
             Log.warning("Blocks that implement IHackableBlock shouldn't be registered as hackable! Registering block: " + block.getLocalizedName());
@@ -74,7 +74,7 @@ public class PneumaticHelmetRegistry implements IPneumaticHelmetRegistry {
 
     @Override
     public List<IHackableEntity> getCurrentEntityHacks(Entity entity) {
-        IHackingCapability hacking = entity.getCapability(CapabilityHacking.HACKING_CAPABILITY, null);
+        IHacking hacking = entity.getCapability(CapabilityHackingProvider.HACKING_CAPABILITY, null);
         if (hacking != null) {
             return hacking.getCurrentHacks();
         } else {

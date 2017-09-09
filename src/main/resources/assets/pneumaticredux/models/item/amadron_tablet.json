@@ -1,7 +1,7 @@
 {
     "parent": "builtin/generated",
     "textures": {
-        "layer0": "pneumaticcraft:items/amadron_tablet"
+        "layer0": "pneumaticredux:items/amadron_tablet"
     },
     "display": {
         "thirdperson": {

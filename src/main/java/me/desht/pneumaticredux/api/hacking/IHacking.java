@@ -5,7 +5,7 @@ import net.minecraft.entity.Entity;
 
 import java.util.List;
 
-public interface IHackingCapability {
+public interface IHacking {
     void update(Entity entity);
     void addHackable(IHackableEntity hackable);
     List<IHackableEntity> getCurrentHacks();

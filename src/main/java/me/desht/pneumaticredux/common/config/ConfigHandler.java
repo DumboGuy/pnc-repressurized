@@ -48,7 +48,7 @@ public class ConfigHandler {
 
         for(ISubConfig subConfig : subConfigs) {
             File subFolder = new File(configFile.getAbsolutePath().substring(0, configFile.getAbsolutePath().length() - 4) + File.separator);
-            if (subFolder.mkdirs()) {
+            if (subFolder.exists() || subFolder.mkdirs()) {
                 File subFile = new File(subFolder, subConfig.getFolderName() + ".cfg");
                 try {
                     subConfig.init(subFile);

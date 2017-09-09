@@ -1,7 +1,7 @@
 {
     "parent": "builtin/generated",
     "textures": {
-        "layer0": "pneumaticcraft:items/upgrades/entity_tracker"
+        "layer0": "pneumaticredux:items/upgrades/entity_tracker"
     },
     "display": {
         "thirdperson": {

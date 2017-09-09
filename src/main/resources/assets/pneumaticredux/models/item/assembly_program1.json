@@ -1,7 +1,7 @@
 {
     "parent": "builtin/generated",
     "textures": {
-        "layer0": "pneumaticcraft:items/programs/program_laser"
+        "layer0": "pneumaticredux:items/programs/program_laser"
     },
     "display": {
         "thirdperson": {

@@ -1,7 +1,7 @@
 {
     "parent": "builtin/generated",
     "textures": {
-        "layer0": "pneumaticcraft:items/turbine_blade"
+        "layer0": "pneumaticredux:items/turbine_blade"
     },
     "display": {
         "thirdperson": {

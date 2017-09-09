@@ -11,7 +11,7 @@ import me.desht.pneumaticredux.api.item.IPressurizable;
 import me.desht.pneumaticredux.client.gui.widget.GuiKeybindCheckBox;
 import me.desht.pneumaticredux.client.render.pneumaticArmor.EntityTrackUpgradeHandler;
 import me.desht.pneumaticredux.client.render.pneumaticArmor.HUDHandler;
-import me.desht.pneumaticredux.client.render.pneumaticArmor.hacking.CapabilityHacking;
+import me.desht.pneumaticredux.client.render.pneumaticArmor.hacking.CapabilityHackingProvider;
 import me.desht.pneumaticredux.client.render.pneumaticArmor.hacking.entity.HackableEnderman;
 import me.desht.pneumaticredux.common.ai.IDroneBase;
 import me.desht.pneumaticredux.common.block.Blockss;
@@ -104,7 +104,7 @@ public class EventHandlerPneumaticCraft {
                     Random rand = new Random();
                     int lossRate = ConfigHandler.General.configCompressedIngotLossRate;
                     if (stack.getCount() >= 3 || rand.nextDouble() >= lossRate / 100D) {
-                        Item newItem = PneumaticCraftUtils.isSameOreDictStack(stack, IRON_INGOT) ? Itemss.INGOT_IRON_COMPRESSED : Item.getItemFromBlock(Blockss.compressedIron);
+                        Item newItem = PneumaticCraftUtils.isSameOreDictStack(stack, IRON_INGOT) ? Itemss.INGOT_IRON_COMPRESSED : Item.getItemFromBlock(Blockss.COMPRESSED_IRON);
                         ItemStack newStack = new ItemStack(newItem, stack.getCount(), stack.getItemDamage());
                         if (stack.getCount() >= 3) {
                             newStack.setCount((int) (stack.getCount() * (rand.nextDouble() * Math.min(lossRate * 0.02D, 0.2D) + (Math.max(0.9D, 1D - lossRate * 0.01D) - lossRate * 0.01D))));
@@ -127,7 +127,7 @@ public class EventHandlerPneumaticCraft {
 
     @SubscribeEvent
     public void onEntityConstruction(AttachCapabilitiesEvent<Entity> event) {
-        event.addCapability(RL("hacking"), new CapabilityHacking());
+        event.addCapability(RL("hacking"), new CapabilityHackingProvider());
     }
 
 //    @SubscribeEvent

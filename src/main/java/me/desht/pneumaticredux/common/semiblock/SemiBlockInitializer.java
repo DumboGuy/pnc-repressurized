@@ -13,7 +13,8 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 @Mod.EventBusSubscriber
 public class SemiBlockInitializer {
     public static void init() {
-        MinecraftForge.EVENT_BUS.register(SemiBlockManager.getServerInstance());
+//        MinecraftForge.EVENT_BUS.register(SemiBlockManager.getServerInstance());
+
         Class requesterClass = Loader.isModLoaded(ModIds.AE2) ? SemiBlockRequesterAE.class : SemiBlockRequester.class;
 
         registerSemiBlock(SemiBlockActiveProvider.ID, SemiBlockActiveProvider.class, false);
@@ -47,8 +48,9 @@ public class SemiBlockInitializer {
         return item;
     }
 
-    @SubscribeEvent
-    public static void registerItems(RegistryEvent.Register<Item> event) {
-        SemiBlockManager.registerItems(event.getRegistry());
-    }
+//    @SubscribeEvent
+//    public static void registerItems(RegistryEvent.Register<Item> event) {
+//        System.out.println("*** SEMIBLOCK ITEM INIT");
+//        SemiBlockManager.registerItems(event.getRegistry());
+//    }
 }

@@ -3,7 +3,7 @@ package me.desht.pneumaticredux.common.item;
 import me.desht.pneumaticredux.PneumaticRedux;
 import me.desht.pneumaticredux.api.item.IItemRegistry.EnumUpgrade;
 import me.desht.pneumaticredux.common.block.Blockss;
-import me.desht.pneumaticredux.common.semiblock.SemiBlockActiveProvider;
+import me.desht.pneumaticredux.common.semiblock.*;
 import me.desht.pneumaticredux.common.thirdparty.ThirdPartyManager;
 import me.desht.pneumaticredux.lib.ModIds;
 import me.desht.pneumaticredux.lib.Names;
@@ -16,6 +16,7 @@ import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemBlock;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Loader;
+import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.oredict.OreDictionary;
@@ -26,6 +27,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+@Mod.EventBusSubscriber
 @GameRegistry.ObjectHolder(Names.MOD_ID)
 public class Itemss {
     @GameRegistry.ObjectHolder("gps_tool")
@@ -92,15 +94,15 @@ public class Itemss {
     public static final Item SEISMIC_SENSOR = null;
     @GameRegistry.ObjectHolder("logistics_configurator")
     public static final Item LOGISTICS_CONFIGURATOR = null;
-    @GameRegistry.ObjectHolder("logistics_frame_requester")
+    @GameRegistry.ObjectHolder(SemiBlockRequester.ID)
     public static final Item LOGISTICS_FRAME_REQUESTER = null;
-    @GameRegistry.ObjectHolder("logistics_frame_storage")
+    @GameRegistry.ObjectHolder(SemiBlockStorage.ID)
     public static final Item LOGISTICS_FRAME_STORAGE = null;
-    @GameRegistry.ObjectHolder("logistics_frame_default_storage")
+    @GameRegistry.ObjectHolder(SemiBlockDefaultStorage.ID)
     public static final Item LOGISTICS_FRAME_DEFAULT_STORAGE = null;
-    @GameRegistry.ObjectHolder("logistics_frame_passive_provider")
+    @GameRegistry.ObjectHolder(SemiBlockPassiveProvider.ID)
     public static final Item LOGISTICS_FRAME_PASSIVE_PROVIDER = null;
-    @GameRegistry.ObjectHolder("logistics_frame_active_provider")
+    @GameRegistry.ObjectHolder(SemiBlockActiveProvider.ID)
     public static final Item LOGISTICS_FRAME_ACTIVE_PROVIDER = null;
     @GameRegistry.ObjectHolder("logistics_drone")
     public static final Item LOGISTICS_DRONE = null;
@@ -111,9 +113,9 @@ public class Itemss {
     @GameRegistry.ObjectHolder("minigun")
     public static final Item MINIGUN = null;
 
-    public static final List<Item> ALL_ITEMS = new ArrayList<>();
-    public static final List<ItemBlock> ALL_ITEMBLOCKS = new ArrayList<>();
-    public static final Map<EnumUpgrade, Item> upgrades = new HashMap<>();
+    public static List<Item> items = new ArrayList<>();
+    public static List<ItemBlock> all_itemblocks = new ArrayList<>();
+    public static Map<EnumUpgrade, Item> upgrades = new HashMap<>();
 
     @SubscribeEvent
     public static void registerItems(RegistryEvent.Register<Item> event) {
@@ -163,8 +165,6 @@ public class Itemss {
 
         registerUpgrades(registry);
 
-        OreDictionary.registerOre(Names.INGOT_IRON_COMPRESSED, INGOT_IRON_COMPRESSED);
-
         for (Block b : Blockss.blocks) {
             registerItem(registry, new ItemBlock(b).setRegistryName(b.getRegistryName()));
         }
@@ -185,9 +185,9 @@ public class Itemss {
         registry.register(item);
         ThirdPartyManager.instance().onItemRegistry(item);
         if (item instanceof ItemBlock) {
-            ALL_ITEMBLOCKS.add((ItemBlock) item);
+            all_itemblocks.add((ItemBlock) item);
         } else {
-            ALL_ITEMS.add(item);
+            items.add(item);
         }
     }
 

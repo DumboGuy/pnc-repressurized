@@ -34,10 +34,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 //TODO 1.8 Thaumcraft dep @Optional.InterfaceList({@Interface(iface = "thaumcraft.api.IRepairable", modid = ModIds.THAUMCRAFT), @Interface(iface = "thaumcraft.api.IGoggles", modid = ModIds.THAUMCRAFT), @Interface(iface = "thaumcraft.api.IVisDiscountGear", modid = ModIds.THAUMCRAFT), @Interface(iface = "thaumcraft.api.nodes.IRevealer", modid = ModIds.THAUMCRAFT)})
 public class ItemPneumaticArmor extends ItemArmor implements IPressurizable, IChargingStationGUIHolderItem,
@@ -116,6 +113,7 @@ IRepairable, IRevealer, IGoggles, IVisDiscountGear*/ {
     public static ItemStack[] getUpgradeStacks(ItemStack iStack) {
         NBTTagCompound tag = NBTUtil.getCompoundTag(iStack, "UpgradeInventory");
         ItemStack[] inventoryStacks = new ItemStack[9];
+        Arrays.fill(inventoryStacks, ItemStack.EMPTY);
         NBTTagList itemList = tag.getTagList("Items", 10);
         for (int i = 0; i < itemList.tagCount(); i++) {
             NBTTagCompound slotEntry = itemList.getCompoundTagAt(i);

@@ -1,5 +1,8 @@
 package me.desht.pneumaticredux.common.util;
 
+import me.desht.pneumaticredux.common.block.Blockss;
+import me.desht.pneumaticredux.common.item.Itemss;
+import me.desht.pneumaticredux.lib.Names;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
 
@@ -26,4 +29,8 @@ public class OreDictionaryHelper {
         return false;
     }
 
+    public static void addOreDictEntries() {
+        OreDictionary.registerOre(Names.INGOT_IRON_COMPRESSED, Itemss.INGOT_IRON_COMPRESSED);
+        OreDictionary.registerOre(Names.BLOCK_IRON_COMPRESSED, Blockss.COMPRESSED_IRON);
+    }
 }

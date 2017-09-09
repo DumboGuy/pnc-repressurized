@@ -23,7 +23,7 @@ public class RecipeGun extends AbstractRecipe {
         this.primer = CraftingHelper.parseShaped("idi", "c  ", "ili",
                 'd', dyeName, 'i', Itemss.INGOT_IRON_COMPRESSED, 'l', Blocks.LEVER,
                 'c', new ItemStack(Itemss.AIR_CANISTER, 1, OreDictionary.WILDCARD_VALUE));
-        this.recipe = new ShapedOreRecipe(RL("matcher_" + output.getRegistryName().getResourcePath()), output, primer);
+        this.recipe = new ShapedOreRecipe(RL("matcher_" + output.getRegistryName().getResourcePath()), getRecipeOutput(), primer);
     }
 
     @Override

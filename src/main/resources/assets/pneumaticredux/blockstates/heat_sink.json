@@ -3,7 +3,7 @@
     "defaults": {
         "textures": {},
         "custom": { "flip-v" : true},
-        "model": "pneumaticcraft:heat_sink.obj"
+        "model": "pneumaticredux:heat_sink.obj"
     },
 	"variants": {
 		"facing": {

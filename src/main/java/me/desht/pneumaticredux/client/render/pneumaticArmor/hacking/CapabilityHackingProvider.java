@@ -1,20 +1,27 @@
 package me.desht.pneumaticredux.client.render.pneumaticArmor.hacking;
 
-import me.desht.pneumaticredux.api.hacking.IHackingCapability;
+import me.desht.pneumaticredux.api.hacking.IHacking;
 import net.minecraft.nbt.NBTBase;
 import net.minecraft.util.EnumFacing;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.capabilities.CapabilityInject;
+import net.minecraftforge.common.capabilities.CapabilityManager;
 import net.minecraftforge.common.capabilities.ICapabilitySerializable;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
-public class CapabilityHacking implements ICapabilitySerializable<NBTBase> {
-    @CapabilityInject(IHackingCapability.class)
-    public static final Capability<IHackingCapability> HACKING_CAPABILITY = null;
+public class CapabilityHackingProvider implements ICapabilitySerializable<NBTBase> {
+    @CapabilityInject(IHacking.class)
+    public static final Capability<IHacking> HACKING_CAPABILITY = null;
 
-    private final IHackingCapability instance = HACKING_CAPABILITY.getDefaultInstance();
+    private static IHacking instance;
+
+    public static void register() {
+        CapabilityManager.INSTANCE.register(IHacking.class, new HackingImpl.Storage(), HackingImpl::new);
+
+        instance = HACKING_CAPABILITY.getDefaultInstance();
+    }
 
     @Override
     public boolean hasCapability(@Nonnull Capability<?> capability, @Nullable EnumFacing facing) {

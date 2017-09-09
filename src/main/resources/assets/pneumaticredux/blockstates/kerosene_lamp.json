@@ -3,7 +3,7 @@
     "defaults": {
         "textures": {},
         "custom": { "flip-v" : true},
-        "model": "pneumaticcraft:kerosene_lamp.obj"
+        "model": "pneumaticredux:kerosene_lamp.obj"
     },
 	"variants": {
 		"facing": {

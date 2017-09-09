@@ -3,7 +3,7 @@
     "defaults": {
         "textures": {},
         "custom": { "flip-v" : true},
-        "model": "pneumaticcraft:uv_light_box.obj"
+        "model": "pneumaticredux:uv_light_box.obj"
     },
 	"variants": {
 		"facing": {

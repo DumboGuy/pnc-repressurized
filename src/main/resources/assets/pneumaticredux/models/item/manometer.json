@@ -1,7 +1,7 @@
 {
     "parent": "builtin/generated",
     "textures": {
-        "layer0": "pneumaticcraft:items/manometer"
+        "layer0": "pneumaticredux:items/manometer"
     },
     "display": {
         "thirdperson": {

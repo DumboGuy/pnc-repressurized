@@ -1,7 +1,7 @@
 {
     "parent": "builtin/generated",
     "textures": {
-        "layer0": "pneumaticcraft:items/empty_pcb"
+        "layer0": "pneumaticredux:items/empty_pcb"
     },
     "display": {
         "thirdperson": {

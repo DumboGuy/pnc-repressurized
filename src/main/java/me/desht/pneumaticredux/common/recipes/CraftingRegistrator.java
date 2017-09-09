@@ -157,7 +157,7 @@ public class CraftingRegistrator {
         addRecipe(new ItemStack(Blockss.vortexTube), "iti", "gtg", "iii", 'i', Names.INGOT_IRON_COMPRESSED, 'g', "ingotGold", 't', Blockss.PRESSURE_TUBE);
         addRecipe(new ItemStack(SemiBlockManager.getItemForSemiBlock(SemiBlockHeatFrame.class)), "iii", "ifi", "iii", 'i', Names.INGOT_IRON_COMPRESSED, 'f', Blocks.FURNACE);
         //misc
-        addRecipe(new ItemStack(Blockss.compressedIron), "iii", "iii", "iii", 'i', Names.INGOT_IRON_COMPRESSED);
+        addRecipe(new ItemStack(Blockss.COMPRESSED_IRON), "iii", "iii", "iii", 'i', Names.INGOT_IRON_COMPRESSED);
         addShapelessRecipe(new ItemStack(Itemss.INGOT_IRON_COMPRESSED, 9, 0), Names.BLOCK_IRON_COMPRESSED);
 
         addShapelessRecipe(new ItemStack(Itemss.PRINTED_CIRCUIT_BOARD), Itemss.UNASSEMBLED_PCB, Itemss.TRANSISTOR, Itemss.TRANSISTOR, Itemss.TRANSISTOR, Itemss.CAPACITOR, Itemss.CAPACITOR, Itemss.CAPACITOR);
@@ -229,7 +229,7 @@ public class CraftingRegistrator {
             registry.registerPressureChamberRecipe(new ItemStack[]{new ItemStack(Blocks.COAL_BLOCK, 8, 0)}, 4.0F, new ItemStack[]{new ItemStack(Items.DIAMOND, 1, 0)});
         // compressed iron
         registry.registerPressureChamberRecipe(new Object[]{new ImmutablePair("ingotIron", 1)}, 2F, new ItemStack[]{new ItemStack(Itemss.INGOT_IRON_COMPRESSED, 1, 0)});
-        registry.registerPressureChamberRecipe(new Object[]{new ImmutablePair("blockIron", 1)}, 2F, new ItemStack[]{new ItemStack(Blockss.compressedIron, 1, 0)});
+        registry.registerPressureChamberRecipe(new Object[]{new ImmutablePair("blockIron", 1)}, 2F, new ItemStack[]{new ItemStack(Blockss.COMPRESSED_IRON, 1, 0)});
 
         // turbine blade
         registry.registerPressureChamberRecipe(new Object[]{new ImmutablePair("dustRedstone", 2), new ImmutablePair("ingotGold", 1)}, 1F, new ItemStack[]{new ItemStack(Itemss.TURBINE_BLADE, 1, 0)});
@@ -250,7 +250,7 @@ public class CraftingRegistrator {
         AssemblyRecipe.addLaserRecipe(new ItemStack(Blockss.PRESSURE_CHAMBER_VALVE, 20, 0), new ItemStack(Blockss.ADVANCED_PRESSURE_TUBE, 8, 0));
         AssemblyRecipe.addLaserRecipe(Blocks.QUARTZ_BLOCK, new ItemStack(Blockss.aphorismTile, 4, 0));
 
-        AssemblyRecipe.addDrillRecipe(new ItemStack(Blockss.compressedIron, 1, 0), new ItemStack(Blockss.PRESSURE_CHAMBER_VALVE, 20, 0));
+        AssemblyRecipe.addDrillRecipe(new ItemStack(Blockss.COMPRESSED_IRON, 1, 0), new ItemStack(Blockss.PRESSURE_CHAMBER_VALVE, 20, 0));
         AssemblyRecipe.addDrillRecipe(new ItemStack(Items.REDSTONE, 1, 0), new ItemStack(Items.DYE, 5, 1));
     }
 
@@ -354,13 +354,13 @@ public class CraftingRegistrator {
     public static void addRecipe(ItemStack result, Object... recipe) {
         String recipeName = "recipe_" + recipeIndex++;
         ShapedOreRecipe newRecipe = new ShapedOreRecipe(RL(recipeName), result, recipe);
-        ForgeRegistries.RECIPES.register(newRecipe);
+        ForgeRegistries.RECIPES.register(newRecipe.setRegistryName(RL(recipeName)));
         scanForFluids(newRecipe);
     }
 
     public static void addShapelessRecipe(ItemStack result, Object... recipe) {
         String recipeName = "recipe_" + recipeIndex++;
-        ForgeRegistries.RECIPES.register(new ShapelessOreRecipe(RL(recipeName), result, recipe));
+        ForgeRegistries.RECIPES.register(new ShapelessOreRecipe(RL(recipeName), result, recipe).setRegistryName(RL(recipeName)));
     }
 
     private static void scanForFluids(ShapedOreRecipe recipe) {

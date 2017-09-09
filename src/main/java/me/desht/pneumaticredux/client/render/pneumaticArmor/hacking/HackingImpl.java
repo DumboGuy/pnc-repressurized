@@ -1,7 +1,7 @@
 package me.desht.pneumaticredux.client.render.pneumaticArmor.hacking;
 
 import me.desht.pneumaticredux.api.client.pneumaticHelmet.IHackableEntity;
-import me.desht.pneumaticredux.api.hacking.IHackingCapability;
+import me.desht.pneumaticredux.api.hacking.IHacking;
 import me.desht.pneumaticredux.client.render.pneumaticArmor.PneumaticHelmetRegistry;
 import me.desht.pneumaticredux.lib.Log;
 import net.minecraft.entity.Entity;
@@ -15,9 +15,8 @@ import net.minecraftforge.common.util.Constants;
 import javax.annotation.Nullable;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.Callable;
 
-public class Hacking implements IHackingCapability {
+public class HackingImpl implements IHacking {
     private final List<IHackableEntity> hackables = new ArrayList<>();
 
     @Override
@@ -35,10 +34,10 @@ public class Hacking implements IHackingCapability {
         return hackables;
     }
 
-    public static class Storage implements Capability.IStorage<IHackingCapability> {
+    public static class Storage implements Capability.IStorage<IHacking> {
         @Nullable
         @Override
-        public NBTBase writeNBT(Capability<IHackingCapability> capability, IHackingCapability instance, EnumFacing side) {
+        public NBTBase writeNBT(Capability<IHacking> capability, IHacking instance, EnumFacing side) {
             NBTTagCompound compound = new NBTTagCompound();
             if (!instance.getCurrentHacks().isEmpty()) {
                 NBTTagList tagList = new NBTTagList();
@@ -55,7 +54,7 @@ public class Hacking implements IHackingCapability {
         }
 
         @Override
-        public void readNBT(Capability<IHackingCapability> capability, IHackingCapability instance, EnumFacing side, NBTBase nbt) {
+        public void readNBT(Capability<IHacking> capability, IHacking instance, EnumFacing side, NBTBase nbt) {
             instance.getCurrentHacks().clear();
             NBTTagList tagList = ((NBTTagCompound) nbt).getTagList("hackables", Constants.NBT.TAG_COMPOUND);
             for (int i = 0; i < tagList.tagCount(); i++) {
@@ -71,13 +70,6 @@ public class Hacking implements IHackingCapability {
                     Log.warning("hackable \"" + hackableId + "\" not found when constructing from NBT. Was it deleted?");
                 }
             }
-        }
-    }
-
-    public static class Factory implements Callable<IHackingCapability> {
-        @Override
-        public IHackingCapability call() throws Exception {
-            return new Hacking();
         }
     }
 }

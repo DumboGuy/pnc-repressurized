@@ -1,7 +1,7 @@
 {
     "parent": "builtin/generated",
     "textures": {
-        "layer0": "pneumaticcraft:items/air_canister"
+        "layer0": "pneumaticredux:items/air_canister"
     },
     "display": {
         "thirdperson": {

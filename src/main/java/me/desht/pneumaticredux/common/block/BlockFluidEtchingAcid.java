@@ -10,11 +10,12 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import net.minecraftforge.fluids.Fluid;
 
 public class BlockFluidEtchingAcid extends BlockFluidPneumaticCraft {
 
-    public BlockFluidEtchingAcid() {
-        super(Fluids.ETCHING_ACID, new MaterialLiquid(MapColor.WATER) {
+    public BlockFluidEtchingAcid(Fluid fluid) {
+        super(fluid, new MaterialLiquid(MapColor.EMERALD) {
             @Override
             public EnumPushReaction getMobilityFlag() {
                 return EnumPushReaction.DESTROY;

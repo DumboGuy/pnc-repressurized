@@ -1,13 +1,12 @@
 package me.desht.pneumaticredux.proxy;
 
-import me.desht.pneumaticredux.api.hacking.IHackingCapability;
 import me.desht.pneumaticredux.client.gui.*;
 import me.desht.pneumaticredux.client.gui.semiblock.GuiLogisticsProvider;
 import me.desht.pneumaticredux.client.gui.semiblock.GuiLogisticsRequester;
 import me.desht.pneumaticredux.client.gui.semiblock.GuiLogisticsStorage;
 import me.desht.pneumaticredux.client.gui.tubemodule.GuiAirGrateModule;
 import me.desht.pneumaticredux.client.gui.tubemodule.GuiPressureModule;
-import me.desht.pneumaticredux.client.render.pneumaticArmor.hacking.Hacking;
+import me.desht.pneumaticredux.client.render.pneumaticArmor.hacking.CapabilityHackingProvider;
 import me.desht.pneumaticredux.common.CommonHUDHandler;
 import me.desht.pneumaticredux.common.HackTickHandler;
 import me.desht.pneumaticredux.common.inventory.*;
@@ -19,7 +18,6 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.common.capabilities.CapabilityManager;
 import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.common.network.IGuiHandler;
 import net.minecraftforge.fml.relauncher.Side;
@@ -254,7 +252,7 @@ public class CommonProxy implements IGuiHandler {
     }
 
     public void preInit() {
-        CapabilityManager.INSTANCE.register(IHackingCapability.class, new Hacking.Storage(), Hacking.class);
+        CapabilityHackingProvider.register();
     }
 
     public void init() {

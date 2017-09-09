@@ -1,7 +1,7 @@
 {
     "parent": "builtin/generated",
     "textures": {
-        "layer0": "pneumaticcraft:items/drone"
+        "layer0": "pneumaticredux:items/drone"
     },
     "display": {
         "thirdperson": {

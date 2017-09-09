@@ -1,7 +1,7 @@
 package me.desht.pneumaticredux.common.semiblock;
 
 public class SemiBlockPassiveProvider extends SemiBlockActiveProvider {
-    public static String ID = "logistic_frame_passive_provider";
+    public static final String ID = "logistic_frame_passive_provider";
 
     @Override
     public int getColor() {
