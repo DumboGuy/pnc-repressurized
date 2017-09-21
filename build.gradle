@@ -8,12 +8,18 @@ buildscript {
     }
 }
 apply plugin: 'net.minecraftforge.gradle.forge'
+
 //Only edit below this line, the above code adds and enables the necessary things for Forge to be setup.
 
-
-version = "0.1"
-group = "me.desht.pneumaticredux"
-archivesBaseName = "pneumaticredux"
+project.ext {
+    massive = "0"
+    major = "1"
+    minor = "0"
+    mcVersion = "1.12.1"
+}
+version = "${project.ext.massive}.${project.ext.major}.${project.minor}"
+group = "me.desht.pneumaticcraft"
+archivesBaseName = "pneumaticcraft"
 
 sourceCompatibility = targetCompatibility = '1.8' // Need this here so eclipse task generates correctly.
 compileJava {
@@ -26,6 +32,19 @@ minecraft {
     mappings = "snapshot_20170908"
     replace '@VERSION@', project.version
         replaceIn 'PneumaticRedux.java'
+    replace '@MASSIVE@', project.massive
+        replaceIn 'lib/Versions.java'
+    replace '@MAJOR@', project.major
+        replaceIn 'lib/Versions.java'
+    replace '@MINOR@', project.minor
+        replaceIn 'lib/Versions.java'
+    replace '@MC_VERSION@', version
+        replaceIn 'lib/Versions.java'
+    if (System.getenv("BUILD_NUMBER") != null) {
+        replace '@BUILD_NUMBER@', System.getenv("BUILD_NUMBER")
+    } else {
+        replace '@BUILD_NUMBER@', 0
+    }
 }
 
 repositories {

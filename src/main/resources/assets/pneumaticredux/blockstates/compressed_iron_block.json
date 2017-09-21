@@ -1,9 +1,0 @@
-{
-	"variants":{
-		"normal": { "model": "pneumaticredux:compressed_iron_block" },
-		"inventory": [{
-          "model": "pneumaticredux:compressed_iron_block"
-        }]
-	}
-	
-}

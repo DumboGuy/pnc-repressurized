@@ -1,8 +1,0 @@
-{
-    "parent": "block/cube_bottom_top",
-    "textures": {
-        "bottom" : "pneumaticredux:blocks/aerial_interface_bottom",
-		"top" : "pneumaticredux:blocks/aerial_interface_top",
-		"side" : "pneumaticredux:blocks/aerial_interface_side"
-    }
-}

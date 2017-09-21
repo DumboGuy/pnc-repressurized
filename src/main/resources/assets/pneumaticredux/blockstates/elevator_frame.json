@@ -1,9 +1,0 @@
-{
-	"variants":{
-		"normal": { "model": "pneumaticredux:elevator_frame" },
-		"inventory": [{
-          "model": "pneumaticredux:elevator_frame"
-        }]
-	}
-	
-}
