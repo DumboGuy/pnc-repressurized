@@ -63,9 +63,12 @@ import net.minecraftforge.event.entity.living.EnderTeleportEvent;
 import net.minecraftforge.event.entity.living.LivingSetAttackTargetEvent;
 import net.minecraftforge.event.entity.player.FillBucketEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
+import net.minecraftforge.event.furnace.FurnaceFuelBurnTimeEvent;
 import net.minecraftforge.event.world.ExplosionEvent;
 import net.minecraftforge.event.world.WorldEvent;
+import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidStack;
+import net.minecraftforge.fluids.FluidUtil;
 import net.minecraftforge.fml.client.FMLClientHandler;
 import net.minecraftforge.fml.common.eventhandler.Event.Result;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
@@ -84,15 +87,14 @@ public class EventHandlerPneumaticCraft {
     private static ItemStack IRON_INGOT = new ItemStack(Items.IRON_INGOT);
     private static ItemStack IRON_BLOCK = new ItemStack(Blocks.IRON_BLOCK);
 
-//    public void missingMappings(MissingMapping event) {
-//        if (event.type == GameRegistry.Type.ITEM) {
-//            if (event.name.equals("pneumaticcraft:machineUpgrade")) {
-//                event.ignore();
-//            } else if (event.name.equals("pneumaticcraft:pneumaticCilinder")) {
-//                event.remap(Itemss.pneumaticCylinder);
-//            }
-//        }
-//    }
+    @SubscribeEvent
+    public void handleFuelEvent(FurnaceFuelBurnTimeEvent event) {
+        FluidStack fluidStack = FluidUtil.getFluidContained(event.getItemStack());
+        if (fluidStack != null) {
+            int value = PneumaticCraftAPIHandler.getInstance().liquidFuels.getOrDefault(fluidStack.getFluid().getName(), -1);
+            event.setBurnTime(value > 0 ? value / 2 : -1);
+        }
+    }
 
     @SubscribeEvent
     public void handleIronExplosions(ExplosionEvent.Detonate event) {
@@ -120,7 +122,6 @@ public class EventHandlerPneumaticCraft {
 
     @SubscribeEvent
     public void onEntityConstruction(EntityConstructing event) {
-//        HackableHandler.onEntityConstruction(event.getEntity());
         if (event.getEntity() instanceof IDroneBase) {
             MinecraftForge.EVENT_BUS.post(new DroneConstructingEvent((IDroneBase) event.getEntity()));
         }
@@ -130,12 +131,6 @@ public class EventHandlerPneumaticCraft {
     public void onEntityConstruction(AttachCapabilitiesEvent<Entity> event) {
         event.addCapability(RL("hacking"), new CapabilityHackingProvider());
     }
-
-//    @SubscribeEvent
-//    public void onPlayerPickup(EntityItemPickupEvent event) {
-//        if (event.getItem() != null && event.getEntityPlayer() != null)
-//            AchievementHandler.giveAchievement(event.getEntityPlayer(), event.getItem().getItem());
-//    }
 
     @SubscribeEvent(priority = EventPriority.LOWEST)
     public void onEnderTeleport(EnderTeleportEvent event) {

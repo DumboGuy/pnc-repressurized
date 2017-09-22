@@ -61,11 +61,7 @@ public class Fluids {
 
     public static void init() {
         // stuff that needs to be done AFTER items & blocks are registered
-        PneumaticCraftRepressurized.instance.registerFuel(new ItemStack(getBucket(OIL)), 150000 / 2);
-        PneumaticCraftRepressurized.instance.registerFuel(new ItemStack(getBucket(DIESEL)), 700000 / 2);
-        PneumaticCraftRepressurized.instance.registerFuel(new ItemStack(getBucket(KEROSENE)), 1100000 / 2);
-        PneumaticCraftRepressurized.instance.registerFuel(new ItemStack(getBucket(GASOLINE)), 1500000 / 2);
-        PneumaticCraftRepressurized.instance.registerFuel(new ItemStack(getBucket(LPG)), 1800000 / 2);
+        // ... which right now is nothing
     }
 
     private static <T extends Block & IFluidBlock> Fluid createFluid(String name,

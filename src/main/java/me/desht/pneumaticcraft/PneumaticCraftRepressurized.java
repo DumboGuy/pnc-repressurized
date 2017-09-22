@@ -189,16 +189,6 @@ public class PneumaticCraftRepressurized {
         }
     }
 
-    public void registerFuel(final ItemStack fuelStack, final int fuelValue) {
-        // FIXME
-        GameRegistry.registerFuelHandler(new IFuelHandler() {
-            @Override
-            public int getBurnTime(ItemStack fuel) {
-                return fuel != null && fuel.isItemEqual(fuelStack) ? fuelValue : 0;
-            }
-        });
-    }
-
     @EventHandler
     public void validateFluids(FMLServerStartedEvent event) {
         Fluid oil = FluidRegistry.getFluid(Fluids.OIL.getName());
