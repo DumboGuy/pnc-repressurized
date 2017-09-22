@@ -14,28 +14,28 @@ public interface ISensorSetting {
      *
      * @return
      */
-    public String getSensorPath();
+    String getSensorPath();
 
     /**
      * Should return the required items in the upgrade slots of a Universal Sensor. This will automatically include a GPS Tool for sensors that require a location.
      *
      * @return
      */
-    public Set<Item> getRequiredUpgrades();
+    Set<Item> getRequiredUpgrades();
 
     /**
      * When returned true, the GUI will enable the textbox writing, otherwise not.
      *
      * @return
      */
-    public boolean needsTextBox();
+    boolean needsTextBox();
 
     /**
      * Called by GuiScreen#drawScreen this method can be used to render additional things like status/info text.
      *
      * @param fontRenderer
      */
-    public void drawAdditionalInfo(FontRenderer fontRenderer);
+    void drawAdditionalInfo(FontRenderer fontRenderer);
 
     /**
      * Should return the description of this sensor displayed in the GUI stat. Information should at least include
@@ -43,7 +43,7 @@ public interface ISensorSetting {
      *
      * @return
      */
-    public List<String> getDescription();
+    List<String> getDescription();
 
     /**
      * Not being used at the moment, I recommend returning null for now. It is going to be used to allow sensors to decide their
@@ -52,5 +52,5 @@ public interface ISensorSetting {
      *
      * @return
      */
-    public Rectangle needsSlot();
+    Rectangle needsSlot();
 }

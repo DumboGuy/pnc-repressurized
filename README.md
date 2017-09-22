@@ -57,6 +57,7 @@ With all that said, have fun!
 * Pneumatic Villagers
 * Flux Compressor (need to reimplement using Forge Energy)
 * Electric Compressor (need to reimplement with IC2 API)
+* Achievements (need to convert to 1.12 Advancements)
 
 ### Not Tested Yet
 

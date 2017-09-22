@@ -84,7 +84,7 @@ public class ClientProxy implements IProxy{
     private void addDefaultKeys(){
         //Register all basic items that have (default) pages to the item and blocks page.
     	// List<ItemStack> stackList = new ArrayList<ItemStack>();
-        NonNullList<ItemStack> allCreativeStacks = NonNullList.<ItemStack>create();
+        NonNullList<ItemStack> allCreativeStacks = NonNullList.create();
 
         IForgeRegistry<Item> itemReg = GameRegistry.findRegistry(Item.class);
         for (Item item : itemReg) {

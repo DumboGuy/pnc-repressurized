@@ -6,12 +6,12 @@ public interface IAssemblyMachine {
      *
      * @return
      */
-    public boolean isIdle();
+    boolean isIdle();
 
     /**
      * Sets the speed of the machine, used when Speed Upgrades are inserted in the Assembly Controller
      *
      * @param speed
      */
-    public void setSpeed(float speed);
+    void setSpeed(float speed);
 }

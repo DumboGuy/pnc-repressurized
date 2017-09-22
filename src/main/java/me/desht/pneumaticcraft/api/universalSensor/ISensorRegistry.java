@@ -6,19 +6,19 @@ public interface ISensorRegistry {
      *
      * @param sensor
      */
-    public void registerSensor(ISensorSetting sensor);
+    void registerSensor(ISensorSetting sensor);
 
     /**
      * Registry for IBlockAndCoordinateEventSensor
      *
      * @param sensor
      */
-    public void registerSensor(IBlockAndCoordinateEventSensor sensor);
+    void registerSensor(IBlockAndCoordinateEventSensor sensor);
 
     /**
      * Registry for IBlockAndCoordinatePollSensor
      *
      * @param sensor
      */
-    public void registerSensor(IBlockAndCoordinatePollSensor sensor);
+    void registerSensor(IBlockAndCoordinatePollSensor sensor);
 }

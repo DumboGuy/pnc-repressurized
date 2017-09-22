@@ -25,5 +25,5 @@ public interface ITextInterpreter{
      * @param locatedTextures images, basically. They, like reservedSpaces, need to have text wrapped around them, instead of text going through them.
      * @return true if you interpreted the text, false if you haven't. When returning true, no other text interpreters will run. If returned false, they will. It's recommended to do like a check at the beginning of the file that contains a marker that allows the interpeter to run, only for your pages.
      */
-    public boolean interpret(FontRenderer fontRenderer, List<String> rawText, List<IReservedSpace> reservedSpaces, List<LocatedString> locatedStrings, List<LocatedStack> locatedStacks, List<IWidget> locatedTextures);
+    boolean interpret(FontRenderer fontRenderer, List<String> rawText, List<IReservedSpace> reservedSpaces, List<LocatedString> locatedStrings, List<LocatedStack> locatedStacks, List<IWidget> locatedTextures);
 }

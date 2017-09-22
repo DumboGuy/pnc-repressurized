@@ -5,7 +5,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 public interface IPneumaticPosProvider extends IPneumaticMachine {
-    public World world();
+    World world();
 
-    public BlockPos pos();
+    BlockPos pos();
 }

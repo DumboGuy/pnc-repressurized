@@ -11,8 +11,6 @@ public class PacketUpdatePressureModule extends PacketUpdateTubeModule<PacketUpd
     public PacketUpdatePressureModule() {
     }
 
-    ;
-
     public PacketUpdatePressureModule(TubeModule module, int fieldId, float value) {
         super(module);
         this.fieldId = fieldId;

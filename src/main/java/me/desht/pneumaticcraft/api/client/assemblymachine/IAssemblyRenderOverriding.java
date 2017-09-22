@@ -12,7 +12,7 @@ public interface IAssemblyRenderOverriding {
      * @param renderedStack itemStack that is being rendered
      * @return true if PneumaticCraft should render the item (after your changes), or false to cancel rendering.
      */
-    public boolean applyRenderChangeIOUnit(ItemStack renderedStack);
+    boolean applyRenderChangeIOUnit(ItemStack renderedStack);
 
     /**
      * Same deal as with the applyRenderChangeIOUnit(), but now for the Assembly Platform.
@@ -20,7 +20,7 @@ public interface IAssemblyRenderOverriding {
      * @param renderedStack itemStack that is being rendered
      * @return true if PneumaticCraft should render the item (after your changes), or false to cancel rendering.
      */
-    public boolean applyRenderChangePlatform(ItemStack renderedStack);
+    boolean applyRenderChangePlatform(ItemStack renderedStack);
 
     /**
      * Should return the distance the claw travels before it is gripped to the stack.
@@ -29,7 +29,7 @@ public interface IAssemblyRenderOverriding {
      * @param renderedStack
      * @return
      */
-    public float getIOUnitClawShift(ItemStack renderedStack);
+    float getIOUnitClawShift(ItemStack renderedStack);
 
     /**
      * Should return the distance the claw travels before it is gripped to the stack.
@@ -38,6 +38,6 @@ public interface IAssemblyRenderOverriding {
      * @param renderedStack
      * @return
      */
-    public float getPlatformClawShift(ItemStack renderedStack);
+    float getPlatformClawShift(ItemStack renderedStack);
 
 }

@@ -10,18 +10,18 @@ public interface IBlockInteractHandler {
      *
      * @return
      */
-    public boolean[] getSides();
+    boolean[] getSides();
 
-    public boolean useCount();
+    boolean useCount();
 
-    public void decreaseCount(int count);
+    void decreaseCount(int count);
 
-    public int getRemainingCount();
+    int getRemainingCount();
 
     /**
      * When invoked, the drone will abort searching the area. Could be used to abort early when full of RF energy for example, when importing RF.
      * (It's useless to search any further)
      */
-    public void abort();
+    void abort();
 
 }

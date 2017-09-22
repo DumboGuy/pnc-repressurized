@@ -10,7 +10,7 @@ import java.util.List;
  * safely be casted to GuiSreen if needed.
  */
 public interface IGuiScreen {
-    public List<GuiButton> getButtonList();
+    List<GuiButton> getButtonList();
 
-    public FontRenderer getFontRenderer();
+    FontRenderer getFontRenderer();
 }

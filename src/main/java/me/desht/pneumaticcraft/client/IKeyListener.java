@@ -3,5 +3,5 @@ package me.desht.pneumaticcraft.client;
 import net.minecraft.client.settings.KeyBinding;
 
 public interface IKeyListener {
-    public void onKeyPress(KeyBinding key);
+    void onKeyPress(KeyBinding key);
 }

@@ -1,7 +1,7 @@
 package me.desht.pneumaticcraft.common.block.tubes;
 
 public interface IInfluenceDispersing {
-    public int getMaxDispersion();
+    int getMaxDispersion();
 
-    public void onAirDispersion(int amount);
+    void onAirDispersion(int amount);
 }

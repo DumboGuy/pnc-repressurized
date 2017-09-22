@@ -23,35 +23,35 @@ public interface IGuiAnimatedStat {
      * @param height Button height.
      * @return rectangle containing the new location and dimensions.
      */
-    public Rectangle getButtonScaledRectangle(int origX, int origY, int width, int height);
+    Rectangle getButtonScaledRectangle(int origX, int origY, int width, int height);
 
     /**
      * When passed 0.5F for example, the text of the stat will be half as big (so more text can fit into a certain area).
      *
      * @param scale
      */
-    public void scaleTextSize(float scale);
+    void scaleTextSize(float scale);
 
     /**
      * Returns true if the statistic expands to the left.
      *
      * @return
      */
-    public boolean isLeftSided();
+    boolean isLeftSided();
 
     /**
      * Returns true if the statistic is done with expanding (when text will be displayed).
      *
      * @return
      */
-    public boolean isDoneExpanding();
+    boolean isDoneExpanding();
 
     /**
      * Pass true if the statistic should expand to the left, otherwise false.
      *
      * @param leftSided
      */
-    public void setLeftSided(boolean leftSided);
+    void setLeftSided(boolean leftSided);
 
     /**
      * Sets the main text of this stat. Every line should be stored in a seperate list element. Upon rendering,
@@ -61,7 +61,7 @@ public interface IGuiAnimatedStat {
      * @param text
      * @return this, so you can chain calls.
      */
-    public IGuiAnimatedStat setText(List<String> text);
+    IGuiAnimatedStat setText(List<String> text);
 
     /**
      * Sets the line to a single line. Upon rendering,
@@ -71,7 +71,7 @@ public interface IGuiAnimatedStat {
      * @param text
      * @return this, so you can chain calls.
      */
-    public IGuiAnimatedStat setText(String text);
+    IGuiAnimatedStat setText(String text);
 
     /**
      * Sets the main text of this stat. Every line should be stored in a seperate list element. Upon rendering,
@@ -79,21 +79,21 @@ public interface IGuiAnimatedStat {
      *
      * @param text
      */
-    public void setTextWithoutCuttingString(List<String> text);
+    void setTextWithoutCuttingString(List<String> text);
 
     /**
      * Sets the title of this stat. It will automatically get the yellow color assigned.
      *
      * @param title
      */
-    public void setTitle(String title);
+    void setTitle(String title);
 
     /**
      * Returns the title of this stat (obviously without color prefix).
      *
      * @return
      */
-    public String getTitle();
+    String getTitle();
 
     /**
      * Defines what dimensions the stat should have when it is not expanded (default 17x17) and resets the stat to these dimensions.
@@ -103,7 +103,7 @@ public interface IGuiAnimatedStat {
      * @param minWidth
      * @param minHeight
      */
-    public void setMinDimensionsAndReset(int minWidth, int minHeight);
+    void setMinDimensionsAndReset(int minWidth, int minHeight);
 
     /**
      * When this stat gets a parent stat assigned, the y of this stat will be the same as the parent's plus this stat's
@@ -111,21 +111,21 @@ public interface IGuiAnimatedStat {
      *
      * @param stat
      */
-    public void setParentStat(IGuiAnimatedStat stat);
+    void setParentStat(IGuiAnimatedStat stat);
 
     /**
      * Sets the x location of this stat.
      *
      * @param x
      */
-    public void setBaseX(int x);
+    void setBaseX(int x);
 
     /**
      * Sets the base Y of this stat.
      *
      * @param y
      */
-    public void setBaseY(int y);
+    void setBaseY(int y);
 
     /**
      * Returns the real Y of this stat. This is the same as getBaseY when there is no parent stat, but if there is this method
@@ -133,32 +133,32 @@ public interface IGuiAnimatedStat {
      *
      * @return
      */
-    public int getAffectedY();
+    int getAffectedY();
 
-    public int getBaseX();
+    int getBaseX();
 
-    public int getBaseY();
+    int getBaseY();
 
     /**
      * Returns the Y size of this stat.
      *
      * @return
      */
-    public int getHeight();
+    int getHeight();
 
     /**
      * Returns the X size of this stat.
      *
      * @return
      */
-    public int getWidth();
+    int getWidth();
 
-    public Rectangle getBounds();
+    Rectangle getBounds();
 
     /**
      * This method should be called every game tick to update the logic of the stat (expanding of the stat).
      */
-    public void update();
+    void update();
 
     /**
      * Should be called every render tick when and where you want to render the stat.
@@ -167,7 +167,7 @@ public interface IGuiAnimatedStat {
      * @param mouseY
      * @param partialTicks
      */
-    public void render(int mouseX, int mouseY, float partialTicks);
+    void render(int mouseX, int mouseY, float partialTicks);
 
     /**
      * This method will handle mouse clicks. This will handle open/closing of the stat when the mouse clicks it.
@@ -177,23 +177,23 @@ public interface IGuiAnimatedStat {
      * @param button
      * @return
      */
-    public void onMouseClicked(int x, int y, int button);
+    void onMouseClicked(int x, int y, int button);
 
     /**
      * Forces the stat to close.
      */
-    public void closeWindow();
+    void closeWindow();
 
     /**
      * Forces the stat to expand.
      */
-    public void openWindow();
+    void openWindow();
 
     /**
      * Returns true if the stat is expanding.
      *
      * @return
      */
-    public boolean isClicked();
+    boolean isClicked();
 
 }

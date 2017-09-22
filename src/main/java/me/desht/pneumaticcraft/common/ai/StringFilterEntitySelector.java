@@ -26,7 +26,7 @@ public class StringFilterEntitySelector implements Predicate<Entity> {
     }
 
     public StringFilterEntitySelector setFilter(String filter) {
-        this.filter = Arrays.asList(new String[]{filter});
+        this.filter = Arrays.asList(filter);
         return this;
     }
 

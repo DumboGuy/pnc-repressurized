@@ -11,7 +11,7 @@ public interface IPathfindHandler {
      * @param pos
      * @return
      */
-    public boolean canPathfindThrough(World world, BlockPos pos);
+    boolean canPathfindThrough(World world, BlockPos pos);
 
     /**
      * CURRENTLY NOT IMPLEMENTED!
@@ -21,5 +21,5 @@ public interface IPathfindHandler {
      * @param world
      * @param pos
      */
-    public void onPathingThrough(World world, BlockPos pos);
+    void onPathingThrough(World world, BlockPos pos);
 }

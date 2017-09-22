@@ -14,7 +14,7 @@ public interface IUpgradeAcceptor {
      *
      * @return
      */
-    public Set<Item> getApplicableUpgrades();
+    Set<Item> getApplicableUpgrades();
 
-    public String getName();
+    String getName();
 }

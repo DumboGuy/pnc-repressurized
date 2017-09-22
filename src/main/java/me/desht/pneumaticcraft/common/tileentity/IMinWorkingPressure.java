@@ -6,5 +6,5 @@ public interface IMinWorkingPressure {
      *
      * @return
      */
-    public float getMinWorkingPressure();
+    float getMinWorkingPressure();
 }

@@ -23,45 +23,45 @@ public interface IDrone extends IPressurizable, ICapabilityProvider {
     /**
      * @return amount of inserted upgrades in the drone
      */
-    public int getUpgrades(Item upgrade);
+    int getUpgrades(Item upgrade);
 
-    public World world();
+    World world();
 
-    public IFluidTank getTank();
+    IFluidTank getTank();
 
 //    public IInventory getInv();
-    public IItemHandlerModifiable getInv();
+IItemHandlerModifiable getInv();
 
-    public Vec3d getDronePos();
+    Vec3d getDronePos();
 
-    public IPathNavigator getPathNavigator();
+    IPathNavigator getPathNavigator();
 
-    public void sendWireframeToClient(BlockPos pos);
+    void sendWireframeToClient(BlockPos pos);
 
-    public EntityPlayerMP getFakePlayer();
+    EntityPlayerMP getFakePlayer();
 
-    public boolean isBlockValidPathfindBlock(BlockPos pos);
+    boolean isBlockValidPathfindBlock(BlockPos pos);
 
-    public void dropItem(ItemStack stack);
+    void dropItem(ItemStack stack);
 
-    public void setDugBlock(BlockPos pos);
+    void setDugBlock(BlockPos pos);
 
-    public EntityAITasks getTargetAI();
+    EntityAITasks getTargetAI();
 
 //    public IExtendedEntityProperties getProperty(String key);
 //
 //    public void setProperty(String key, IExtendedEntityProperties property);
 
-    public void setEmittingRedstone(EnumFacing orientation, int emittingRedstone);
+    void setEmittingRedstone(EnumFacing orientation, int emittingRedstone);
 
-    public void setName(String string);
+    void setName(String string);
 
-    public void setCarryingEntity(Entity entity);
+    void setCarryingEntity(Entity entity);
 
-    public List<Entity> getCarryingEntities();
+    List<Entity> getCarryingEntities();
 //    public Entity getCarryingEntity();
 
-    public boolean isAIOverriden();
+    boolean isAIOverriden();
 
-    public void onItemPickupEvent(EntityItem curPickingUpEntity, int stackSize);
+    void onItemPickupEvent(EntityItem curPickingUpEntity, int stackSize);
 }

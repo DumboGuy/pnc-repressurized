@@ -4,25 +4,25 @@ import java.awt.*;
 import java.util.List;
 
 public interface IGuiWidget {
-    public void setListener(IWidgetListener gui);
+    void setListener(IWidgetListener gui);
 
-    public int getID();
+    int getID();
 
-    public void render(int mouseX, int mouseY, float partialTick);
+    void render(int mouseX, int mouseY, float partialTick);
 
-    public void postRender(int mouseX, int mouseY, float partialTick);
+    void postRender(int mouseX, int mouseY, float partialTick);
 
-    public void onMouseClicked(int mouseX, int mouseY, int button);
+    void onMouseClicked(int mouseX, int mouseY, int button);
 
-    public void onMouseClickedOutsideBounds(int mouseX, int mouseY, int button);
+    void onMouseClickedOutsideBounds(int mouseX, int mouseY, int button);
 
-    public Rectangle getBounds();
+    Rectangle getBounds();
 
-    public void addTooltip(int mouseX, int mouseY, List<String> curTooltip, boolean shiftPressed);
+    void addTooltip(int mouseX, int mouseY, List<String> curTooltip, boolean shiftPressed);
 
-    public boolean onKey(char key, int keyCode);
+    boolean onKey(char key, int keyCode);
 
-    public void update();
+    void update();
 
-    public void handleMouseInput();
+    void handleMouseInput();
 }

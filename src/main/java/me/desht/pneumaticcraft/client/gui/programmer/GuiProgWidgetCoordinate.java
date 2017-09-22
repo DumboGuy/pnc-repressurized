@@ -49,7 +49,7 @@ public class GuiProgWidgetCoordinate extends GuiProgWidgetAreaShow<ProgWidgetCoo
         addWidget(radioButton);
 
         gpsButton = new GuiButtonSpecial(0, guiLeft + 100, guiTop + 20, 20, 20, "");
-        gpsButton.setRenderStacks(new ItemStack[]{new ItemStack(Itemss.GPS_TOOL)});
+        gpsButton.setRenderStacks(new ItemStack(Itemss.GPS_TOOL));
         gpsButton.setTooltipText(I18n.format("gui.progWidget.coordinate.selectFromGPS"));
         gpsButton.enabled = !widget.isUsingVariable();
         buttonList.add(gpsButton);

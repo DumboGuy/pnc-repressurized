@@ -25,7 +25,7 @@ public class GuiPastebin extends GuiPneumaticScreenBase {
     private EnumState state = EnumState.NONE;
 
     private enum EnumState {
-        NONE, GETTING, PUTTING, LOGIN, LOGOUT;
+        NONE, GETTING, PUTTING, LOGIN, LOGOUT
     }
 
     public GuiPastebin(GuiScreen parentScreen, String pastingString) {

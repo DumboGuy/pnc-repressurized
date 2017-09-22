@@ -28,8 +28,7 @@ public class RecipePneumaticHelmet extends AbstractRecipe {
         if (inventory.getStackInRowAndColumn(1, 0).getItem() != Itemss.PRINTED_CIRCUIT_BOARD) return false;
         if (inventory.getStackInRowAndColumn(2, 0).getItem() != Itemss.AIR_CANISTER) return false;
         if (inventory.getStackInRowAndColumn(0, 1).getItem() != Itemss.AIR_CANISTER) return false;
-        if (inventory.getStackInRowAndColumn(2, 1).getItem() != Itemss.AIR_CANISTER) return false;
-        return true;
+        return inventory.getStackInRowAndColumn(2, 1).getItem() == Itemss.AIR_CANISTER;
     }
 
     @Override

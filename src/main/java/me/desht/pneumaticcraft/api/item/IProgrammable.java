@@ -16,7 +16,7 @@ public interface IProgrammable {
      * @param stack
      * @return
      */
-    public boolean canProgram(ItemStack stack);
+    boolean canProgram(ItemStack stack);
 
     /**
      * When returned true, Programming Puzzles are needed to program this item. When returned false, it's free to program.
@@ -25,13 +25,13 @@ public interface IProgrammable {
      * @param stack
      * @return
      */
-    public boolean usesPieces(ItemStack stack);
+    boolean usesPieces(ItemStack stack);
 
     /**
      * When returned true, the implementing item will get a tooltip added of the summary of puzzles used in the stored program.
      *
      * @return
      */
-    public boolean showProgramTooltip();
+    boolean showProgramTooltip();
 
 }

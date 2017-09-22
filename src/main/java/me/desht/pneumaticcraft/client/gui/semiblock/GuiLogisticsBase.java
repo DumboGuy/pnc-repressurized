@@ -87,7 +87,7 @@ public class GuiLogisticsBase<Logistics extends SemiBlockLogistics> extends GuiP
             IFluidTank tank = logistics.getTankFilter(widget.getID());
             if (tank.getFluidAmount() > 0) {
                 if (middleClick) {
-                    logistics.setFilter(widget.getID(), (FluidStack) null);
+                    logistics.setFilter(widget.getID(), null);
                 } else if (leftClick) {
                     tank.drain(shift ? tank.getFluidAmount() / 2 : 1000, true);
                     if (tank.getFluidAmount() < 1000) {

@@ -49,7 +49,7 @@ public class ContainerSearcher extends Container {
                 int i1 = l + (k + j) * 8;
 
                 if (i1 >= 0 && i1 < itemList.size()) {
-                    gui.getInventory().setStackInSlot(l + k * 8, (ItemStack) itemList.get(i1));
+                    gui.getInventory().setStackInSlot(l + k * 8, itemList.get(i1));
                 } else {
                     gui.getInventory().setStackInSlot(l + k * 8, ItemStack.EMPTY);
                 }

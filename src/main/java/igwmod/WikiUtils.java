@@ -17,7 +17,7 @@ public class WikiUtils{
         if(unlocMap == null) {
             unlocMap = new HashMap<String, ItemStack>();
            // List<ItemStack> stackList = new ArrayList<ItemStack>();
-            NonNullList<ItemStack> stackList = NonNullList.<ItemStack>create();
+            NonNullList<ItemStack> stackList = NonNullList.create();
             Iterator iterator = Item.REGISTRY.iterator();
             while(iterator.hasNext()) {
                 Item item = (Item)iterator.next();

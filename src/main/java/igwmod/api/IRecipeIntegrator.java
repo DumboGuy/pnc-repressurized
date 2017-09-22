@@ -17,7 +17,7 @@ public interface IRecipeIntegrator{
      * Return the name of the command here. for normal crafting recipes this is 'crafting', and for furnace recipes 'furnace'
      * @return
      */
-    public String getCommandKey();
+    String getCommandKey();
 
     /**
      * Called as soon as the parsed command started with the command key of this instance. 
@@ -28,5 +28,5 @@ public interface IRecipeIntegrator{
      * @param locatedTextures If you add a recipe handler, add a texture here as underlay for the items.
      * @throws IllegalArgumentException throw this when the wiki writer tries to give illegal arguments. It won't crash the game, instead it will display the error on the generated page.
      */
-    public void onCommandInvoke(String[] arguments, List<IReservedSpace> reservedSpaces, List<LocatedString> locatedStrings, List<LocatedStack> locatedStacks, List<IWidget> locatedTextures) throws IllegalArgumentException;
+    void onCommandInvoke(String[] arguments, List<IReservedSpace> reservedSpaces, List<LocatedString> locatedStrings, List<LocatedStack> locatedStacks, List<IWidget> locatedTextures) throws IllegalArgumentException;
 }

@@ -13,20 +13,20 @@ public interface IWikiTab{
      * The returned string will be displayed on the tooltip when you hover over the tab.
      * @return
      */
-    public String getName();
+    String getName();
 
     /**
      * Will be called by the GUI to render the tab. The render matrix will already be translated dependant on where this tab is.
      * @return When you return an ItemStack, this stack will be drawn rotating. Returning null is valid, nothing will be drawn (you will).
      */
-    public ItemStack renderTabIcon(GuiWiki gui);
+    ItemStack renderTabIcon(GuiWiki gui);
 
     /**
      * With this you can specify which spaces in the wikipage are prohibited for text to occur. This method is also used to add standard widgets,
      * like images that need to exist on every wikipage of this tab. Just add a {@link LocatedTexture} to this list and it will be rendered.
      * @return
      */
-    public List<IReservedSpace> getReservedSpaces();
+    List<IReservedSpace> getReservedSpaces();
 
     /**
      * In here you should return the full list of pages. This will also define how people will be able to navigate through pages on this tab.
@@ -37,26 +37,26 @@ public interface IWikiTab{
      * of two) however you want. You're in charge on the location of each of the elements.
      * @return
      */
-    public List<IPageLink> getPages(int[] pageIndexes);
+    List<IPageLink> getPages(int[] pageIndexes);
 
     /**
      * The value returned defines how high the textfield will appear. On a basic page this is on the top of the screen, on the item/block & entity
      * page this is somewhere in the middle.
      * @return
      */
-    public int getSearchBarAndScrollStartY();
+    int getSearchBarAndScrollStartY();
 
     /**
      * Return the amount of page links that fit on one page (it will allow scrolling if there are more pages than that).
      * @return
      */
-    public int pagesPerTab();
+    int pagesPerTab();
 
     /**
      * How many elements (page links) are being scrolled per scroll. This is usually 1, but for the Item/Blocks tab this is 2 (to move two items at once per scroll).
      * @return
      */
-    public int pagesPerScroll();
+    int pagesPerScroll();
 
     /**
      * 
@@ -64,7 +64,7 @@ public interface IWikiTab{
      * @param mouseX
      * @param mouseY
      */
-    public void renderForeground(GuiWiki gui, int mouseX, int mouseY);
+    void renderForeground(GuiWiki gui, int mouseX, int mouseY);
 
     /**
      * 
@@ -72,7 +72,7 @@ public interface IWikiTab{
      * @param mouseX
      * @param mouseY
      */
-    public void renderBackground(GuiWiki gui, int mouseX, int mouseY);
+    void renderBackground(GuiWiki gui, int mouseX, int mouseY);
 
     /**
      * 
@@ -81,7 +81,7 @@ public interface IWikiTab{
      * @param mouseY
      * @param mouseKey
      */
-    public void onMouseClick(GuiWiki gui, int mouseX, int mouseY, int mouseKey);
+    void onMouseClick(GuiWiki gui, int mouseX, int mouseY, int mouseKey);
 
     /**
      * Called when navigated to a page of this tab. pageName is the actual path of the .txt file. metadata can be empty, or containing an itemstack or Class<? extends Entity>
@@ -89,6 +89,6 @@ public interface IWikiTab{
      * @param pageName
      * @param metadata
      */
-    public void onPageChange(GuiWiki gui, String pageName, Object... metadata);
+    void onPageChange(GuiWiki gui, String pageName, Object... metadata);
 
 }

@@ -163,7 +163,7 @@ public class LocatedString extends Gui implements IPageLink, GuiYesNoCallback{
     }
 
     protected void drawCreativeTabHoveringText(String par1Str, int par2, int par3){
-        func_102021_a(Arrays.asList(new String[]{par1Str}), par2, par3);
+        func_102021_a(Arrays.asList(par1Str), par2, par3);
     }
 
     protected void func_102021_a(List par1List, int par2, int par3){

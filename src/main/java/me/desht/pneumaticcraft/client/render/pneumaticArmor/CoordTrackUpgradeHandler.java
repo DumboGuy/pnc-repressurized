@@ -48,7 +48,7 @@ public class CoordTrackUpgradeHandler implements IUpgradeRenderHandler {
     public static final int SEARCH_RANGE = 150;
 
     public enum EnumNavigationResult {
-        NO_PATH, EASY_PATH, DRONE_PATH;
+        NO_PATH, EASY_PATH, DRONE_PATH
     }
 
     @Override

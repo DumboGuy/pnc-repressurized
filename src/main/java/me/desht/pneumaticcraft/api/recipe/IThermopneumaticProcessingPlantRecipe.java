@@ -11,7 +11,7 @@ public interface IThermopneumaticProcessingPlantRecipe {
      * @param inputItem
      * @return
      */
-    public boolean isValidRecipe(FluidStack inputTank, ItemStack inputItem);
+    boolean isValidRecipe(FluidStack inputTank, ItemStack inputItem);
 
     /**
      * Should return the output fluid stack for this recipe. Do not modify these input items yet.
@@ -20,7 +20,7 @@ public interface IThermopneumaticProcessingPlantRecipe {
      * @param inputItem
      * @return
      */
-    public FluidStack getRecipeOutput(FluidStack inputTank, ItemStack inputItem);
+    FluidStack getRecipeOutput(FluidStack inputTank, ItemStack inputItem);
 
     /**
      * Decrease the input items used in the recipe here. When the stacksize is decreased to 0 it will automatically be set to null, so you don't have to worry about that.
@@ -28,18 +28,18 @@ public interface IThermopneumaticProcessingPlantRecipe {
      * @param inputTank
      * @param inputItem
      */
-    public void useRecipeItems(FluidStack inputTank, ItemStack inputItem);
+    void useRecipeItems(FluidStack inputTank, ItemStack inputItem);
 
     /**
      * @param inputTank
      * @param inputItem
      * @return temperature in degrees Kelvin.
      */
-    public double getRequiredTemperature(FluidStack inputTank, ItemStack inputItem);
+    double getRequiredTemperature(FluidStack inputTank, ItemStack inputItem);
 
-    public double heatUsed(FluidStack inputTank, ItemStack inputItem);
+    double heatUsed(FluidStack inputTank, ItemStack inputItem);
 
-    public float getRequiredPressure(FluidStack inputTank, ItemStack inputItem);
+    float getRequiredPressure(FluidStack inputTank, ItemStack inputItem);
 
-    public int airUsed(FluidStack inputTank, ItemStack inputItem);
+    int airUsed(FluidStack inputTank, ItemStack inputItem);
 }

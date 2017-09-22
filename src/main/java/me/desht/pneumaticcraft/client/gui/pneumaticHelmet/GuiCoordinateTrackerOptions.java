@@ -49,13 +49,13 @@ public class GuiCoordinateTrackerOptions implements IOptionPage {
         CoordTrackUpgradeHandler coordHandler = HUDHandler.instance().getSpecificRenderer(CoordTrackUpgradeHandler.class);
         switch (button.id) {
             case 10:
-                mc.displayGuiScreen((GuiScreen) null);
+                mc.displayGuiScreen(null);
                 mc.setIngameFocus();
                 coordHandler.isListeningToCoordTrackerSetting = true;
                 HUDHandler.instance().addMessage(new ArmorMessage("Changing Coordinate Tracker coordinate...", Arrays.asList("Right-click the desired coordinate"), 90, 0x7000AA00));
                 break;
             case 11:
-                mc.displayGuiScreen((GuiScreen) null);
+                mc.displayGuiScreen(null);
                 mc.setIngameFocus();
                 switch (coordHandler.navigateToSurface(mc.player)) {
                     case EASY_PATH:

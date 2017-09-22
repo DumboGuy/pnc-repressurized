@@ -14,7 +14,7 @@ public interface IOptionPage {
      *
      * @return
      */
-    public String getPageName();
+    String getPageName();
 
     /**
      * Here you can initialize your buttons and stuff like with a GuiScreen. For buttons, don't use button id 100 and up, as they
@@ -22,16 +22,16 @@ public interface IOptionPage {
      *
      * @param gui
      */
-    public void initGui(IGuiScreen gui);
+    void initGui(IGuiScreen gui);
 
     /**
      * Same as GuiScreen#actionPerformed(GuiButton).
      *
      * @param button
      */
-    public void actionPerformed(GuiButton button);
+    void actionPerformed(GuiButton button);
 
-    public void drawPreButtons(int x, int y, float partialTicks);
+    void drawPreButtons(int x, int y, float partialTicks);
 
     /**
      * Same as {@link GuiScreen#drawScreen(int, int, float)}
@@ -41,7 +41,7 @@ public interface IOptionPage {
      * @param y
      * @param partialTicks
      */
-    public void drawScreen(int x, int y, float partialTicks);
+    void drawScreen(int x, int y, float partialTicks);
 
     /**
      * Same as GuiScreen#keyTyped(char, int).
@@ -49,13 +49,13 @@ public interface IOptionPage {
      * @param ch
      * @param key
      */
-    public void keyTyped(char ch, int key);
+    void keyTyped(char ch, int key);
 
-    public void mouseClicked(int x, int y, int button);
+    void mouseClicked(int x, int y, int button);
 
-    public void handleMouseInput();
+    void handleMouseInput();
 
-    public boolean canBeTurnedOff();
+    boolean canBeTurnedOff();
 
-    public boolean displaySettingsText();
+    boolean displaySettingsText();
 }

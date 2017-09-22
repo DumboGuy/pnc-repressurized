@@ -16,14 +16,14 @@ public interface IBlockAndCoordinateEventSensor {
      *
      * @return
      */
-    public String getSensorPath();
+    String getSensorPath();
 
     /**
      * See {@link ISensorSetting#getRequiredUpgrades()}
      *
      * @return
      */
-    public Set<Item> getRequiredUpgrades();
+    Set<Item> getRequiredUpgrades();
 
     /**
      * Extended version of the normal emitRedstoneOnEvent. This method will only invoke with a valid GPS tool, and when all the coordinates are within range.
@@ -34,38 +34,38 @@ public interface IBlockAndCoordinateEventSensor {
      * @param positions When only one GPS Tool is inserted this contains the position of just that tool. If two GPS Tools are inserted, These are both corners of a box, and every coordinate in this box is added to the positions argument.
      * @return
      */
-    public int emitRedstoneOnEvent(Event event, TileEntity sensor, int range, Set<BlockPos> positions);
+    int emitRedstoneOnEvent(Event event, TileEntity sensor, int range, Set<BlockPos> positions);
 
     /**
      * See {@link IEventSensorSetting#getRedstonePulseLength()}
      *
      * @return
      */
-    public int getRedstonePulseLength();
+    int getRedstonePulseLength();
 
     /**
      * See {@link ISensorSetting#needsTextBox()}
      *
      * @return
      */
-    public boolean needsTextBox();
+    boolean needsTextBox();
 
     /**
      * See {@link ISensorSetting#needsSlot()}
      */
-    public Rectangle needsSlot();
+    Rectangle needsSlot();
 
     /**
      * See {@link ISensorSetting#getDescription()}
      *
      * @return
      */
-    public List<String> getDescription();
+    List<String> getDescription();
 
     /**
      * Called by GuiScreen#drawScreen this method can be used to render additional things like status/info text.
      *
      * @param fontRenderer
      */
-    public void drawAdditionalInfo(FontRenderer fontRenderer);
+    void drawAdditionalInfo(FontRenderer fontRenderer);
 }

@@ -11,5 +11,5 @@ public interface IManoMeasurable {
      * @param player  that rightclicks the measurable TE, and therefore needs to get the message
      * @param curInfo list you can append info to. If you don't append any info no air will be used.
      */
-    public void printManometerMessage(EntityPlayer player, List<String> curInfo);
+    void printManometerMessage(EntityPlayer player, List<String> curInfo);
 }

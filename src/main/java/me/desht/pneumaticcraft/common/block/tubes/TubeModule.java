@@ -106,7 +106,7 @@ public abstract class TubeModule implements ISidedPart {
         upgraded = nbt.getBoolean("upgraded");
         lowerBound = nbt.getFloat("lowerBound");
         higherBound = nbt.getFloat("higherBound");
-        advancedConfig = nbt.hasKey("advancedConfig") ? nbt.getBoolean("advancedConfig") : true;
+        advancedConfig = !nbt.hasKey("advancedConfig") || nbt.getBoolean("advancedConfig");
     }
 
     public void writeToNBT(NBTTagCompound nbt) {

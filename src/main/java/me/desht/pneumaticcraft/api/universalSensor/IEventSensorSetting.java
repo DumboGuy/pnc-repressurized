@@ -14,12 +14,12 @@ public interface IEventSensorSetting extends ISensorSetting {
      * @param textboxText
      * @return Redstone strength for the given event.
      */
-    public int emitRedstoneOnEvent(Event event, TileEntity sensor, int range, String textboxText);
+    int emitRedstoneOnEvent(Event event, TileEntity sensor, int range, String textboxText);
 
     /**
      * Should return how long a pulse should hold in ticks. By default this is 5 ticks (1/4 second).
      *
      * @return
      */
-    public int getRedstonePulseLength();
+    int getRedstonePulseLength();
 }

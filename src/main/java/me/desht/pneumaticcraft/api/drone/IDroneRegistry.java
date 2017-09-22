@@ -16,7 +16,7 @@ public interface IDroneRegistry {
      * @param block
      * @param handler can be null, to always allow pathfinding through this block.
      */
-    public void addPathfindableBlock(Block block, IPathfindHandler handler);
+    void addPathfindableBlock(Block block, IPathfindHandler handler);
 
     /**
      * This will add a puzzle piece that has only a Area white- and blacklist parameter (similar to a GoTo piece).
@@ -24,7 +24,7 @@ public interface IDroneRegistry {
      *
      * @param interactor
      */
-    public void registerCustomBlockInteractor(ICustomBlockInteract interactor);
+    void registerCustomBlockInteractor(ICustomBlockInteract interactor);
 
     /**
      * Will spawn in a Drone a distance away from the given coordinate. When there is an inventory at the given x,y,z the drone will export the items in there. If there isn't or items don't fit, the drone will travel to 5 blocks above the specified
@@ -39,7 +39,7 @@ public interface IDroneRegistry {
      * @param deliveredStacks stacks that are delivered by the drone. When no stacks, or more than 65 stacks are given, this will generate an IllegalArgumentException.
      * @return the drone. You can use this to set a custom name for example (defaults to "Amadron Delivery Drone").
      */
-    public EntityCreature deliverItemsAmazonStyle(World world, BlockPos pos, ItemStack... deliveredStacks);
+    EntityCreature deliverItemsAmazonStyle(World world, BlockPos pos, ItemStack... deliveredStacks);
 
     /**
      * The opposite of deliverItemsAmazonStyle. Will retrieve the queried items from an inventory at the specified location.
@@ -49,7 +49,7 @@ public interface IDroneRegistry {
      * @param queriedStacks
      * @return
      */
-    public EntityCreature retrieveItemsAmazonStyle(World world, BlockPos pos, ItemStack... queriedStacks);
+    EntityCreature retrieveItemsAmazonStyle(World world, BlockPos pos, ItemStack... queriedStacks);
 
     /**
      * Similar to deliverItemsAmazonStyle, but with Fluids. Will spawn in a Drone that will fill an IFluidHandler at the given x,y,z. If the fluid doesn't fit or there isn't a IFluidHandler, the fluid is lost.
@@ -59,7 +59,7 @@ public interface IDroneRegistry {
      * @param deliveredFluid
      * @return
      */
-    public EntityCreature deliverFluidAmazonStyle(World world, BlockPos pos, FluidStack deliveredFluid);
+    EntityCreature deliverFluidAmazonStyle(World world, BlockPos pos, FluidStack deliveredFluid);
 
     /**
      * The opposite of deliverFluidAmazonStyle. Will retrieve the queried fluid from an IFluidHandler at the specified location.
@@ -69,5 +69,5 @@ public interface IDroneRegistry {
      * @param queriedStacks
      * @return
      */
-    public EntityCreature retrieveFluidAmazonStyle(World world, BlockPos pos, FluidStack queriedFluid);
+    EntityCreature retrieveFluidAmazonStyle(World world, BlockPos pos, FluidStack queriedFluid);
 }

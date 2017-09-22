@@ -22,19 +22,19 @@ public interface IHackableBlock {
      *
      * @return
      */
-    public String getId();
+    String getId();
 
     /**
      * Returning true will allow the player to hack this block. This can be used to only allow hacking on certain conditions.
      */
-    public boolean canHack(IBlockAccess world, BlockPos pos, EntityPlayer player);
+    boolean canHack(IBlockAccess world, BlockPos pos, EntityPlayer player);
 
     /**
      * Add info that is displayed on the tracker tooltip here. Text like "Hack to explode" can be added.
      * This method is only called when canHack(World, int, int, int) returned true.
      * The added lines automatically will be tried to get localized.
      */
-    public void addInfo(World world, BlockPos pos, List<String> curInfo, EntityPlayer player);
+    void addInfo(World world, BlockPos pos, List<String> curInfo, EntityPlayer player);
 
     /**
      * Add info that is being displayed after hacking, as long as 'afterHackTick' is returning true.
@@ -45,17 +45,17 @@ public interface IHackableBlock {
      * @param player
      * @param entity
      */
-    public void addPostHackInfo(World world, BlockPos pos, List<String> curInfo, EntityPlayer player);
+    void addPostHackInfo(World world, BlockPos pos, List<String> curInfo, EntityPlayer player);
 
     /**
      * Return the time it takes to hack this block in ticks. For more powerful hacks, a longer required hacking time is adviced.
      */
-    public int getHackTime(IBlockAccess world, BlockPos pos, EntityPlayer player);
+    int getHackTime(IBlockAccess world, BlockPos pos, EntityPlayer player);
 
     /**
      * When the player hacked the block for getHackTime(World, int, int, int) ticks this will be called on both server and client side.
      */
-    public void onHackFinished(World world, BlockPos pos, EntityPlayer player);
+    void onHackFinished(World world, BlockPos pos, EntityPlayer player);
 
     /**
      * Called every tick after the hacking finished (on both server and client side). Returning true will keep this going (for mob spawners, to keep them neutralized),
@@ -67,5 +67,5 @@ public interface IHackableBlock {
      * @param pos
      * @return
      */
-    public boolean afterHackTick(World world, BlockPos pos);
+    boolean afterHackTick(World world, BlockPos pos);
 }

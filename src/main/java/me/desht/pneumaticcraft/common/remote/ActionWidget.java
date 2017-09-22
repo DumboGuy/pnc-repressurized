@@ -11,7 +11,6 @@ public abstract class ActionWidget<Widget extends IGuiWidget> {
     protected Widget widget;
     private String enableVariable = "";
     private BlockPos enablingValue = new BlockPos(0, 0, 0);
-    ;
 
     public ActionWidget(Widget widget) {
         this.widget = widget;

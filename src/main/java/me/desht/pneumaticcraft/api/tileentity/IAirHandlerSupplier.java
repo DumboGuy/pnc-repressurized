@@ -1,9 +1,9 @@
 package me.desht.pneumaticcraft.api.tileentity;
 
 public interface IAirHandlerSupplier {
-    public IAirHandler createTierOneAirHandler(int volume);
+    IAirHandler createTierOneAirHandler(int volume);
 
-    public IAirHandler createTierTwoAirHandler(int volume);
+    IAirHandler createTierTwoAirHandler(int volume);
 
     /**
      * Returns a new instance of an IAirHandler. This handler handles everything pressurized air related: Air dispersion,
@@ -21,5 +21,5 @@ public interface IAirHandlerSupplier {
      *                         The higher the volume the slower the machine will charge/discharge.
      * @return
      */
-    public IAirHandler createAirHandler(float dangerPressure, float criticalPressure, int volume);
+    IAirHandler createAirHandler(float dangerPressure, float criticalPressure, int volume);
 }

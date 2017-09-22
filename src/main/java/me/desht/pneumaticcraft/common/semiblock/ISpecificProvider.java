@@ -5,8 +5,8 @@ import net.minecraftforge.fluids.FluidStack;
 
 public interface ISpecificProvider {
 
-    public boolean canProvide(ItemStack providingStack);
+    boolean canProvide(ItemStack providingStack);
 
-    public boolean canProvide(FluidStack providingStack);
+    boolean canProvide(FluidStack providingStack);
 
 }

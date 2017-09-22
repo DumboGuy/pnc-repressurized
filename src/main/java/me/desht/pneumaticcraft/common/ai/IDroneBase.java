@@ -8,22 +8,22 @@ import java.util.List;
 
 public interface IDroneBase extends IDrone {
 
-    public List<IProgWidget> getProgWidgets();
+    List<IProgWidget> getProgWidgets();
 
-    public void setActiveProgram(IProgWidget widget);
+    void setActiveProgram(IProgWidget widget);
 
-    public boolean isProgramApplicable(IProgWidget widget);
+    boolean isProgramApplicable(IProgWidget widget);
 
-    public void overload();
+    void overload();
 
-    public DroneAIManager getAIManager();
+    DroneAIManager getAIManager();
 
     /**
      * Sets the label that was jumped to last, with a hierarchy in case of External Programs.
      */
-    public void updateLabel();
+    void updateLabel();
 
-    public void addDebugEntry(String message);
+    void addDebugEntry(String message);
 
-    public void addDebugEntry(String message, BlockPos pos);
+    void addDebugEntry(String message, BlockPos pos);
 }

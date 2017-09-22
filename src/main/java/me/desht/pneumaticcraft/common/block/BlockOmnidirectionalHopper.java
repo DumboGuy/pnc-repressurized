@@ -21,7 +21,7 @@ import net.minecraft.world.World;
 
 public class BlockOmnidirectionalHopper extends BlockPneumaticCraftModeled {
 
-    private static final PropertyEnum<EnumFacing> INPUT = PropertyEnum.<EnumFacing>create("input", EnumFacing.class);
+    private static final PropertyEnum<EnumFacing> INPUT = PropertyEnum.create("input", EnumFacing.class);
 
     BlockOmnidirectionalHopper(String registryName) {
         super(Material.IRON, registryName);

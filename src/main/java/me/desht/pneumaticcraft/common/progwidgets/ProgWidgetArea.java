@@ -36,11 +36,11 @@ public class ProgWidgetArea extends ProgWidget implements IAreaProvider, IVariab
         private final String name;
         public final boolean utilizesTypeInfo;
 
-        private EnumAreaType(String name) {
+        EnumAreaType(String name) {
             this(name, false);
         }
 
-        private EnumAreaType(String name, boolean utilizesTypeInfo) {
+        EnumAreaType(String name, boolean utilizesTypeInfo) {
             this.name = name;
             this.utilizesTypeInfo = utilizesTypeInfo;
         }

@@ -11,5 +11,5 @@ import net.minecraft.world.World;
  */
 public interface IPneumaticWrenchable {
 
-    public boolean rotateBlock(World world, EntityPlayer player, BlockPos pos, EnumFacing side);
+    boolean rotateBlock(World world, EntityPlayer player, BlockPos pos, EnumFacing side);
 }

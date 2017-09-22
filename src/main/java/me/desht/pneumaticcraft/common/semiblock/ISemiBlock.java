@@ -10,29 +10,29 @@ import net.minecraft.world.World;
 
 public interface ISemiBlock {
 
-    public World getWorld();
+    World getWorld();
 
-    public BlockPos getPos();
+    BlockPos getPos();
 
-    public void writeToNBT(NBTTagCompound tag);
+    void writeToNBT(NBTTagCompound tag);
 
-    public void readFromNBT(NBTTagCompound tag);
+    void readFromNBT(NBTTagCompound tag);
 
-    public void update();
+    void update();
 
-    public void initialize(World world, BlockPos pos);
+    void initialize(World world, BlockPos pos);
 
-    public void invalidate();
+    void invalidate();
 
-    public boolean isInvalid();
+    boolean isInvalid();
 
-    public void addDrops(NonNullList<ItemStack> drops);
+    void addDrops(NonNullList<ItemStack> drops);
 
-    public boolean canPlace();
+    boolean canPlace();
 
-    public void onPlaced(EntityPlayer player, ItemStack stack);
+    void onPlaced(EntityPlayer player, ItemStack stack);
 
-    public boolean onRightClickWithConfigurator(EntityPlayer player);
+    boolean onRightClickWithConfigurator(EntityPlayer player);
 
-    public PacketDescription getDescriptionPacket();
+    PacketDescription getDescriptionPacket();
 }

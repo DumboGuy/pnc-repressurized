@@ -53,7 +53,7 @@ public class DebugEntry implements Comparable<DebugEntry> {
 
     @Override
     public boolean equals(Object other) {
-        return other instanceof DebugEntry ? ((DebugEntry) other).id == id : false;
+        return other instanceof DebugEntry && ((DebugEntry) other).id == id;
     }
 
     @Override

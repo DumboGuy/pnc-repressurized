@@ -13,14 +13,14 @@ public interface ICustomBlockInteract {
     /**
      * Should return a unique Id, used in NBT saving and localization.
      */
-    public String getName();
+    String getName();
 
     /**
      * Should return the puzzle piece texture. Should be a multiple of 80x64 (width x height). I'd recommend starting out with copying the Go To widget texture.
      *
      * @return
      */
-    public ResourceLocation getTexture();
+    ResourceLocation getTexture();
 
     /**
      * The actual interaction.
@@ -36,12 +36,12 @@ public interface ICustomBlockInteract {
      * @param simulate        will be true when trying to figure out whether or not the drone should navigate to this block, false when next to this block.
      * @return
      */
-    public boolean doInteract(BlockPos pos, IDrone drone, IBlockInteractHandler interactHandler, boolean simulate);
+    boolean doInteract(BlockPos pos, IDrone drone, IBlockInteractHandler interactHandler, boolean simulate);
 
     /**
      * Used for crafting, categorizes the puzzle piece.
      *
      * @return
      */
-    public int getCraftingColorIndex();
+    int getCraftingColorIndex();
 }

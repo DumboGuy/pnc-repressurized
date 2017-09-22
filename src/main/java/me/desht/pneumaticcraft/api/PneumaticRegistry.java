@@ -33,33 +33,35 @@ public final class PneumaticRegistry {
 
     public interface IPneumaticCraftInterface {
 
-        public IPneumaticRecipeRegistry getRecipeRegistry();
+        IPneumaticRecipeRegistry getRecipeRegistry();
 
-        public IAirHandlerSupplier getAirHandlerSupplier();
+        IAirHandlerSupplier getAirHandlerSupplier();
 
-        public IPneumaticHelmetRegistry getHelmetRegistry();
+        IPneumaticHelmetRegistry getHelmetRegistry();
 
-        public IDroneRegistry getDroneRegistry();
+        IDroneRegistry getDroneRegistry();
 
-        public IHeatRegistry getHeatRegistry();
+        IHeatRegistry getHeatRegistry();
 
-        public IClientRegistry getGuiRegistry();
+        IClientRegistry getGuiRegistry();
 
-        public ISensorRegistry getSensorRegistry();
+        ISensorRegistry getSensorRegistry();
 
-        public IItemRegistry getItemRegistry();
+        IItemRegistry getItemRegistry();
 
         /*
          * ---------------- Power Generation -----------
          */
 
         /**
-         * Adds a burnable liquid to the Liquid Compressor's available burnable fuels.
+         * Adds a burnable liquid to the Liquid Compressor's available burnable fuels.  This also allows a bucket
+         * of that liquid to be used in furnaces, the burn time being half the mLPerBucket value.
          *
-         * @param fluid
-         * @param mLPerBucket the amount of mL generated for 1000mB of the fuel. As comparison, one piece of coal generates 16000mL in an Air Compressor.
+         * @param fluid the fluid
+         * @param mLPerBucket the amount of mL generated for 1000mB of the fuel. As comparison, one piece of coal
+         *                    generates 16000mL in an Air Compressor.
          */
-        public void registerFuel(Fluid fluid, int mLPerBucket);
+        void registerFuel(Fluid fluid, int mLPerBucket);
 
         /*
          * --------------- Misc -------------------
@@ -76,7 +78,7 @@ public final class PneumaticRegistry {
          * @return The amount of Security Stations that disallow interaction for the given player.
          * This method throws an IllegalArgumentException when tried to be called from the client side!
          */
-        public int getProtectingSecurityStations(World world, BlockPos pos, EntityPlayer player, boolean showRangeLines);
+        int getProtectingSecurityStations(World world, BlockPos pos, EntityPlayer player, boolean showRangeLines);
 
         /**
          * Used to register a liquid that represents liquid XP (like MFR mob essence, OpenBlocks liquid XP).
@@ -85,7 +87,7 @@ public final class PneumaticRegistry {
          * @param fluid
          * @param liquidToPointRatio The amount of liquid (in mB) used to get one XP point. In OpenBlocks this is 20 (mB/point).
          */
-        public void registerXPLiquid(Fluid fluid, int liquidToPointRatio);
+        void registerXPLiquid(Fluid fluid, int liquidToPointRatio);
 
     }
 }

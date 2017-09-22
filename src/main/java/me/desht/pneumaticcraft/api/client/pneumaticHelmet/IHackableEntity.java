@@ -18,19 +18,19 @@ public interface IHackableEntity {
      *
      * @return
      */
-    public String getId();
+    String getId();
 
     /**
      * Returning true will allow the player to hack this entity. This can be used to only allow hacking on certain conditions.
      */
-    public boolean canHack(Entity entity, EntityPlayer player);
+    boolean canHack(Entity entity, EntityPlayer player);
 
     /**
      * Add info that is displayed on the tracker tooltip here. Text like "Hack to explode" can be added.
      * This method is only called when canHack(Entity) returned true.
      * The added lines automatically will be tried to get localized.
      */
-    public void addInfo(Entity entity, List<String> curInfo, EntityPlayer player);
+    void addInfo(Entity entity, List<String> curInfo, EntityPlayer player);
 
     /**
      * Add info that is being displayed after hacking, as long as 'afterHackTick' is returning true.
@@ -41,21 +41,21 @@ public interface IHackableEntity {
      * @param curInfo
      * @param player
      */
-    public void addPostHackInfo(Entity entity, List<String> curInfo, EntityPlayer player);
+    void addPostHackInfo(Entity entity, List<String> curInfo, EntityPlayer player);
 
     /**
      * Return the time it takes to hack this entity in ticks. For more powerful hacks, a longer required hacking time is adviced.
      */
-    public int getHackTime(Entity entity, EntityPlayer player);
+    int getHackTime(Entity entity, EntityPlayer player);
 
     /**
      * When the player hacked the entity for getHackTime(Entity) ticks this will be called on both client and server side.
      */
-    public void onHackFinished(Entity entity, EntityPlayer player);
+    void onHackFinished(Entity entity, EntityPlayer player);
 
     /**
      * Called every tick after the hacking finished. Returning true will keep this going (for mob spawners, to keep them neutralized),
      * or false to stop ticking (for door/lever hacking).
      */
-    public boolean afterHackTick(Entity entity);
+    boolean afterHackTick(Entity entity);
 }

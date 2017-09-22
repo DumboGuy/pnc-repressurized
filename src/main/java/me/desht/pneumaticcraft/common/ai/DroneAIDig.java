@@ -33,7 +33,7 @@ public class DroneAIDig extends DroneAIBlockInteraction {
         if (!worldCache.isAirBlock(pos) && !ignoreBlock(block)) {
             List<ItemStack> droppedStacks;
             if (block.canSilkHarvest(drone.world(), pos, blockState, drone.getFakePlayer())) {
-                droppedStacks = Arrays.asList(new ItemStack[]{getSilkTouchBlock(block, blockState)});
+                droppedStacks = Arrays.asList(getSilkTouchBlock(block, blockState));
             } else {
                 droppedStacks = block.getDrops(drone.world(), pos, blockState, 0);
             }

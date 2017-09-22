@@ -17,7 +17,7 @@ public class IGWMod implements IThirdParty {
     @Override
     public void preInit() {
         try {
-            int minorVersion = Integer.parseInt((String) ReflectionHelper.getPrivateValue(Constants.class, null, "MINOR"));
+            int minorVersion = Integer.parseInt(ReflectionHelper.getPrivateValue(Constants.class, null, "MINOR"));
             if (minorVersion < 7) MinecraftForge.EVENT_BUS.register(this);
         } catch (Throwable e) {
             e.printStackTrace();

@@ -606,10 +606,7 @@ public class TileEntityPressureChamberValve extends TileEntityPneumaticBase impl
         int x = pos.getX();
         int y = pos.getY();
         int z = pos.getZ();
-        if (x > multiBlockX && x < multiBlockX + multiBlockSize - 1 && y > multiBlockY && y < multiBlockY + multiBlockSize - 1 && z > multiBlockZ && z < multiBlockZ + multiBlockSize - 1) {
-            return true;
-        }
-        return false;
+        return x > multiBlockX && x < multiBlockX + multiBlockSize - 1 && y > multiBlockY && y < multiBlockY + multiBlockSize - 1 && z > multiBlockZ && z < multiBlockZ + multiBlockSize - 1;
     }
 
     @Override

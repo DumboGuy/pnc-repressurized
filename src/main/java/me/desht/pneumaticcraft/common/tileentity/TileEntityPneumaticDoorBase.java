@@ -153,7 +153,7 @@ public class TileEntityPneumaticDoorBase extends TileEntityPneumaticBase impleme
     }
 
     private boolean isNeighborOpening() {
-        return doubleDoor != null ? doubleDoor.shouldOpen() : false;
+        return doubleDoor != null && doubleDoor.shouldOpen();
     }
 
     public void setNeighborOpening(boolean opening) {

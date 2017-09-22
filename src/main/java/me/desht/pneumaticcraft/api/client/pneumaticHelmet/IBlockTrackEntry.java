@@ -21,7 +21,7 @@ public interface IBlockTrackEntry {
      * @param te    The TileEntity at this x,y,z.
      * @return true if the coordinate should be tracked by this BlockTrackEntry.
      */
-    public boolean shouldTrackWithThisEntry(IBlockAccess world, BlockPos pos, IBlockState state, TileEntity te);
+    boolean shouldTrackWithThisEntry(IBlockAccess world, BlockPos pos, IBlockState state, TileEntity te);
 
     /**
      * This method defines if the block should be updated by the server (each 5
@@ -34,7 +34,7 @@ public interface IBlockTrackEntry {
      * @return true if the Tile Entity should be updated, or false when it
      * doesn't have to.
      */
-    public boolean shouldBeUpdatedFromServer(TileEntity te);
+    boolean shouldBeUpdatedFromServer(TileEntity te);
 
     /**
      * The return of this method defines at how many tracked blocks of this type
@@ -42,7 +42,7 @@ public interface IBlockTrackEntry {
      *
      * @return amount of blocks the HUD should stop displaying the block info.
      */
-    public int spamThreshold();
+    int spamThreshold();
 
     /**
      * This method is called each render tick to retrieve the blocks additional
@@ -56,7 +56,7 @@ public interface IBlockTrackEntry {
      * @param te       The TileEntity at the x,y,z.
      * @param infoList The list of lines to display.
      */
-    public void addInformation(World world, BlockPos pos, TileEntity te, List<String> infoList);
+    void addInformation(World world, BlockPos pos, TileEntity te, List<String> infoList);
 
     /**
      * This method is called when displaying the currently tracked blocks.
@@ -64,5 +64,5 @@ public interface IBlockTrackEntry {
      *
      * @return the name of the group of this entry.
      */
-    public String getEntryName();
+    String getEntryName();
 }

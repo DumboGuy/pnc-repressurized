@@ -2,7 +2,7 @@ package me.desht.pneumaticcraft.client.gui.widget;
 
 public interface IWidgetListener {
 
-    public void actionPerformed(IGuiWidget widget);
+    void actionPerformed(IGuiWidget widget);
 
-    public void onKeyTyped(IGuiWidget widget);
+    void onKeyTyped(IGuiWidget widget);
 }

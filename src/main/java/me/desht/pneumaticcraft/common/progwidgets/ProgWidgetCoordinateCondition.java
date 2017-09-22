@@ -48,8 +48,7 @@ public class ProgWidgetCoordinateCondition extends ProgWidgetConditionBase {
         BlockPos pos2 = ProgWidgetCoordinateOperator.calculateCoordinate(widget, 1, EnumOperator.PLUS_MINUS);
         if (checkingAxis[0] && !evaluate(pos1.getX(), pos2.getX())) return false;
         if (checkingAxis[1] && !evaluate(pos1.getY(), pos2.getY())) return false;
-        if (checkingAxis[2] && !evaluate(pos1.getZ(), pos2.getZ())) return false;
-        return true;
+        return !(checkingAxis[2] && !evaluate(pos1.getZ(), pos2.getZ()));
     }
 
     private boolean evaluate(int arg1, int arg2) {

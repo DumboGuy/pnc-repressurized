@@ -146,7 +146,7 @@ public class GuiPressureModule extends GuiTubeModule {
          */
 
         if (module instanceof TubeModuleRedstoneReceiving) {
-            ((TubeModuleRedstoneReceiving) module).onNeighborBlockUpdate();
+            module.onNeighborBlockUpdate();
             drawHorizontalLine(graphLeft + 4, graphRight, graphHighY + (graphLowY - graphHighY) * (15 - ((TubeModuleRedstoneReceiving) module).getReceivingRedstoneLevel()) / 15, 0xFFFF0000);
             String status = "Current threshold: " + PneumaticCraftUtils.roundNumberTo(((TubeModuleRedstoneReceiving) module).getThreshold(), 1) + " bar";
             fontRenderer.drawString(status, guiLeft + xSize / 2 - fontRenderer.getStringWidth(status) / 2, guiTop + 173, 0xFF000000);

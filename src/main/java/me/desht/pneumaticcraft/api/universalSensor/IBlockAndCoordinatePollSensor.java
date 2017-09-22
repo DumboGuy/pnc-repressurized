@@ -16,35 +16,35 @@ public interface IBlockAndCoordinatePollSensor {
      *
      * @return
      */
-    public String getSensorPath();
+    String getSensorPath();
 
     /**
      * See {@link ISensorSetting#getRequiredUpgrades()}
      *
      * @return
      */
-    public Set<Item> getRequiredUpgrades();
+    Set<Item> getRequiredUpgrades();
 
     /**
      * See {@link ISensorSetting#needsTextBox()}
      *
      * @return
      */
-    public boolean needsTextBox();
+    boolean needsTextBox();
 
     /**
      * See {@link ISensorSetting#needsSlot()}
      *
      * @return
      */
-    public Rectangle needsSlot();
+    Rectangle needsSlot();
 
     /**
      * See {@link ISensorSetting#getDescription()}
      *
      * @return
      */
-    public List<String> getDescription();
+    List<String> getDescription();
 
     /**
      * See {@link IPollSensorSetting#getRedstoneValue(World, BlockPos, int, String)} , but this has the GPS tracked coordinates
@@ -57,20 +57,20 @@ public interface IBlockAndCoordinatePollSensor {
      * @param positions   When only one GPS Tool is inserted this contains the position of just that tool. If two GPS Tools are inserted, These are both corners of a box, and every coordinate in this box is added to the positions argument.
      * @return
      */
-    public int getRedstoneValue(World world, BlockPos pos, int sensorRange, String textBoxText, Set<BlockPos> positions);
+    int getRedstoneValue(World world, BlockPos pos, int sensorRange, String textBoxText, Set<BlockPos> positions);
 
     /**
      * See {@link IPollSensorSetting#getPollFrequency(TileEntity)}
      *
      * @return
      */
-    public int getPollFrequency();
+    int getPollFrequency();
 
     /**
      * Called by GuiScreen#drawScreen this method can be used to render additional things like status/info text.
      *
      * @param fontRenderer
      */
-    public void drawAdditionalInfo(FontRenderer fontRenderer);
+    void drawAdditionalInfo(FontRenderer fontRenderer);
 
 }

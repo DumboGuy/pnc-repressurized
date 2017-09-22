@@ -42,7 +42,7 @@ public class HackableTameable implements IHackableEntity {
             tameable.handleStatusUpdate((byte) 7);
         } else {
             tameable.getNavigator().clearPathEntity();
-            tameable.setAttackTarget((EntityLivingBase) null);
+            tameable.setAttackTarget(null);
             tameable.setHealth(20.0F);
             tameable.setOwnerId(player.getUniqueID());
             entity.world.setEntityState(tameable, (byte) 7);

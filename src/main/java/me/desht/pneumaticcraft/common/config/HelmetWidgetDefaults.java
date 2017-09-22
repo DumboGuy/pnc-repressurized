@@ -25,7 +25,7 @@ public class HelmetWidgetDefaults extends JsonConfig {
         JsonArray array = new JsonArray();
         for (String s : KEY_BINDS) {
             array.add(s);
-        };
+        }
         json.add("keybindings", array);
     }
 

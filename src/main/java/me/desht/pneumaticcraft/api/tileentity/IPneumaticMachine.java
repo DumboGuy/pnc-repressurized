@@ -21,5 +21,5 @@ public interface IPneumaticMachine {
      *
      * @return a valid IAirHandler when connectable on this side. If not, return null.
      */
-    public IAirHandler getAirHandler(EnumFacing side);
+    IAirHandler getAirHandler(EnumFacing side);
 }

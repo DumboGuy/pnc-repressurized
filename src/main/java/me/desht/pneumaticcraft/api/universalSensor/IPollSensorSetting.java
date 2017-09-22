@@ -13,7 +13,7 @@ public interface IPollSensorSetting extends ISensorSetting {
      * @param te universal sensor
      * @return
      */
-    public int getPollFrequency(TileEntity te);
+    int getPollFrequency(TileEntity te);
 
     /**
      * The base method. This method should return the outputted redstone value 0-15 of this sensor. When this sensor is
@@ -25,6 +25,6 @@ public interface IPollSensorSetting extends ISensorSetting {
      * @param textBoxText The text typed in the textbox of the Universal Sensor.
      * @return
      */
-    public int getRedstoneValue(World world, BlockPos pos, int sensorRange, String textBoxText);
+    int getRedstoneValue(World world, BlockPos pos, int sensorRange, String textBoxText);
 
 }

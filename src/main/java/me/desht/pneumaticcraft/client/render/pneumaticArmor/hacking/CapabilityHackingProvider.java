@@ -31,7 +31,7 @@ public class CapabilityHackingProvider implements ICapabilitySerializable<NBTBas
     @Nullable
     @Override
     public <T> T getCapability(@Nonnull Capability<T> capability, @Nullable EnumFacing facing) {
-        return capability == HACKING_CAPABILITY ? HACKING_CAPABILITY.<T> cast(instance) : null;
+        return capability == HACKING_CAPABILITY ? HACKING_CAPABILITY.cast(instance) : null;
     }
 
     @Override

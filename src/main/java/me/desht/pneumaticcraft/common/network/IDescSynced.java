@@ -7,19 +7,19 @@ import net.minecraft.util.math.BlockPos;
 import java.util.List;
 
 public interface IDescSynced {
-    public static enum Type {
-        TILE_ENTITY, SEMI_BLOCK;
+    enum Type {
+        TILE_ENTITY, SEMI_BLOCK
     }
 
-    public Type getSyncType();
+    Type getSyncType();
 
-    public List<SyncedField> getDescriptionFields();
+    List<SyncedField> getDescriptionFields();
 
-    public void writeToPacket(NBTTagCompound tag);
+    void writeToPacket(NBTTagCompound tag);
 
-    public void readFromPacket(NBTTagCompound tag);
+    void readFromPacket(NBTTagCompound tag);
 
-    public BlockPos getPosition();
+    BlockPos getPosition();
 
-    public void onDescUpdate();
+    void onDescUpdate();
 }

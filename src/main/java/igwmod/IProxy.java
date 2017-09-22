@@ -5,13 +5,13 @@ import net.minecraftforge.fml.common.event.FMLInterModComms;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
 public interface IProxy{
-    public void preInit(FMLPreInitializationEvent event);
+    void preInit(FMLPreInitializationEvent event);
 
-    public void postInit();
+    void postInit();
 
-    public void processIMC(FMLInterModComms.IMCEvent event);
+    void processIMC(FMLInterModComms.IMCEvent event);
 
-    public String getSaveLocation();
+    String getSaveLocation();
 
-    public EntityPlayer getPlayer();
+    EntityPlayer getPlayer();
 }

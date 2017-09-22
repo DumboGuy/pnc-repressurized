@@ -1,11 +1,11 @@
 package me.desht.pneumaticcraft.common.remote;
 
 public interface IActionWidgetLabeled {
-    public void setText(String text);
+    void setText(String text);
 
-    public String getText();
+    String getText();
 
-    public void setTooltip(String text);
+    void setTooltip(String text);
 
-    public String getTooltip();
+    String getTooltip();
 }

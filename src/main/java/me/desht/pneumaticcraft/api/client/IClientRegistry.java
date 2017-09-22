@@ -15,7 +15,7 @@ public interface IClientRegistry {
      * @param backgroundColor
      * @return
      */
-    public IGuiAnimatedStat getAnimatedStat(GuiScreen gui, int backgroundColor);
+    IGuiAnimatedStat getAnimatedStat(GuiScreen gui, int backgroundColor);
 
     /**
      * Returns a GuiAnimatedStat which uses an itemstack as static icon.
@@ -25,7 +25,7 @@ public interface IClientRegistry {
      * @param backgroundColor
      * @return
      */
-    public IGuiAnimatedStat getAnimatedStat(GuiScreen gui, ItemStack iconStack, int backgroundColor);
+    IGuiAnimatedStat getAnimatedStat(GuiScreen gui, ItemStack iconStack, int backgroundColor);
 
     /**
      * Returns a GuiAnimatedStat which uses a texture location as static icon.
@@ -35,7 +35,7 @@ public interface IClientRegistry {
      * @param backgroundColor
      * @return
      */
-    public IGuiAnimatedStat getAnimatedStat(GuiScreen gui, String iconTexture, int backgroundColor);
+    IGuiAnimatedStat getAnimatedStat(GuiScreen gui, String iconTexture, int backgroundColor);
 
     /**
      * Draws a Pressure Gauge, the same which is also used in many PneumaticCraft applications.
@@ -50,9 +50,9 @@ public interface IClientRegistry {
      * @param yPos               y position of the gauge.
      * @param zLevel             z position of the gauge (Gui#zLevel, -90, for in normal GUI's).
      */
-    public void drawPressureGauge(FontRenderer fontRenderer, float minPressure, float maxPressure, float dangerPressure, float minWorkingPressure, float currentPressure, int xPos, int yPos, float zLevel);
+    void drawPressureGauge(FontRenderer fontRenderer, float minPressure, float maxPressure, float dangerPressure, float minWorkingPressure, float currentPressure, int xPos, int yPos, float zLevel);
 
-    public void registerRenderOverride(Block block, IAssemblyRenderOverriding renderOverride);
+    void registerRenderOverride(Block block, IAssemblyRenderOverriding renderOverride);
 
-    public void registerRenderOverride(Item item, IAssemblyRenderOverriding renderOverride);
+    void registerRenderOverride(Item item, IAssemblyRenderOverriding renderOverride);
 }

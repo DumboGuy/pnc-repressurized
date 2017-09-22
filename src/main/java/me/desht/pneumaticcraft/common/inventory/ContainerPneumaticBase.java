@@ -192,8 +192,7 @@ public class ContainerPneumaticBase<Tile extends TileEntityBase> extends Contain
     private boolean canStacksMerge(ItemStack stack1, ItemStack stack2) {
         if (stack1.isEmpty() || stack2.isEmpty()) return false;
         if (!stack1.isItemEqual(stack2)) return false;
-        if (!ItemStack.areItemStackTagsEqual(stack1, stack2)) return false;
-        return true;
+        return ItemStack.areItemStackTagsEqual(stack1, stack2);
     }
 
     private void adjustPhantomSlot(Slot slot, ClickType clickType, int dragType) {

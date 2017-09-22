@@ -5,5 +5,5 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 public interface ISemiBlockItem {
-    public ISemiBlock getSemiBlock(World world, BlockPos pos, ItemStack stack);
+    ISemiBlock getSemiBlock(World world, BlockPos pos, ItemStack stack);
 }

@@ -10,14 +10,14 @@ public interface IActuator {
      *
      * @return
      */
-    public String getSensorPath();
+    String getSensorPath();
 
     /**
      * When returned true, the GUI will enable the textbox writing, otherwise not.
      *
      * @return
      */
-    public boolean needsTextBox();
+    boolean needsTextBox();
 
     /**
      * Should return the description of this sensor displayed in the GUI stat. Information should at least include
@@ -25,10 +25,10 @@ public interface IActuator {
      *
      * @return
      */
-    public List<String> getDescription();
+    List<String> getDescription();
 
     /**
      * @param universalActuator
      */
-    public void actuate(TileEntity universalActuator);
+    void actuate(TileEntity universalActuator);
 }
