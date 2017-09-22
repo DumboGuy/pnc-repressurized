@@ -95,9 +95,6 @@ public class PneumaticCraftRepressurized {
         NetworkRegistry.INSTANCE.registerGuiHandler(instance, proxy);
         tabPneumaticCraft = new CreativeTabPneumaticCraft("tabPneumaticCraft");
         Fluids.preInit();
-//        Blockss.init();
-//        Itemss.init();
-//        ModuleRegistrator.init();
         ThirdPartyManager.instance().preInit();
         TileEntityRegistrator.init();
         EntityRegistrator.init();
@@ -105,7 +102,6 @@ public class PneumaticCraftRepressurized {
         //TODO 1.8 fix  VillagerHandler.instance().init();
         GameRegistry.registerWorldGenerator(new WorldGeneratorPneumaticCraft(), 0);
         HeatBehaviourManager.getInstance().init();
-//        SensorHandler.getInstance().init();
 
         proxy.preInit();
         tickHandler = new TickHandlerPneumaticCraft();
@@ -119,7 +115,7 @@ public class PneumaticCraftRepressurized {
     }
 
     @EventHandler
-    public void load(FMLInitializationEvent event) {
+    public void onInit(FMLInitializationEvent event) {
         NetworkHandler.init();
 
         Fluids.init();
@@ -128,7 +124,7 @@ public class PneumaticCraftRepressurized {
         HackableHandler.addDefaultEntries();
         SensorHandler.getInstance().init();
 
-        // FIXME: port chest generator
+        // FIXME: chest loot generation
         if (ConfigHandler.general.enableDungeonLoot) {
 //            ChestGenHooks.getInfo(ChestGenHooks.VILLAGE_BLACKSMITH).addItem(new WeightedRandomChestContent(new ItemStack(Itemss.stopWorm), 1, 4, 10));
 //            ChestGenHooks.getInfo(ChestGenHooks.DUNGEON_CHEST).addItem(new WeightedRandomChestContent(new ItemStack(Itemss.stopWorm), 1, 4, 10));
@@ -165,7 +161,7 @@ public class PneumaticCraftRepressurized {
     public void postInit(FMLPostInitializationEvent event) {
 
         //Add these later so we include other mod's storage recipes.
-        // CraftingRegistrator.addPressureChamberStorageBlockRecipes();
+//         CraftingRegistrator.addPressureChamberStorageBlockRecipes();
         CraftingRegistrator.addAssemblyCombinedRecipes();
         HeatExchangerManager.getInstance().init();
         FluidFuelManager.registerFuels();

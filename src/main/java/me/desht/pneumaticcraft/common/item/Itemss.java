@@ -186,15 +186,4 @@ public class Itemss {
             items.add(item);
         }
     }
-
-//    public static void registerItem(Item item) {
-//        registerItem(item, item.getUnlocalizedName().substring("item.".length()));
-//    }
-//
-//    public static void registerItem(Item item, String registerName) {
-//        GameRegistry.registerItem(item, registerName, Names.MOD_ID);
-//        ThirdPartyManager.instance().onItemRegistry(item);
-//        //GameData.newItemAdded(item);
-//        items.add(item);
-//    }
 }

@@ -1,6 +1,7 @@
 package me.desht.pneumaticcraft.common.block;
 
 import me.desht.pneumaticcraft.common.config.ConfigHandler;
+import me.desht.pneumaticcraft.common.thirdparty.ThirdPartyManager;
 import me.desht.pneumaticcraft.lib.Names;
 import me.desht.pneumaticcraft.lib.PneumaticValues;
 import net.minecraft.block.Block;
@@ -166,12 +167,7 @@ public class Blockss {
 
     public static void registerBlock(IForgeRegistry<Block> registry, Block block) {
         registry.register(block);
+        ThirdPartyManager.instance().onBlockRegistry(block);
         blocks.add(block);
     }
-
-//    private static void registerBlock(Block block, Class<? extends ItemBlockPneumaticCraft> itemBlockClass) {
-//        GameRegistry.registerBlock(block, itemBlockClass, block.getUnlocalizedName().substring("tile.".length()));
-//        ThirdPartyManager.instance().onBlockRegistry(block);
-//        blocks.add(block);
-//    }
 }
