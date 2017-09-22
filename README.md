@@ -48,6 +48,7 @@ With all that said, have fun!
 * Pneumatic Doors (need a TESR for smooth door rotation)
 * Miniguns (ammo works, mobs die, but no item model)
 * Tube Modules (no model when placed - modules have an empty bounding box, can be removed with wrench)
+* Vortex Cannon (vortex entities working nicely but cannon needs an item model)
 
 ### Not Working Yet
 

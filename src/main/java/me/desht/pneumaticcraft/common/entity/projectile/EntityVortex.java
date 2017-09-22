@@ -23,16 +23,16 @@ public class EntityVortex extends EntityThrowable {
     private double oldMotionY;
     private double oldMotionZ;
 
-    public EntityVortex(World par1World) {
-        super(par1World);
+    public EntityVortex(World world) {
+        super(world);
     }
 
-    public EntityVortex(World par1World, EntityLivingBase par2EntityLiving) {
-        super(par1World, par2EntityLiving);
+    public EntityVortex(World world, EntityLivingBase thrower) {
+        super(world, thrower);
     }
 
-    public EntityVortex(World par1World, double par2, double par4, double par6) {
-        super(par1World, par2, par4, par6);
+    public EntityVortex(World world, double par2, double par4, double par6) {
+        super(world, par2, par4, par6);
     }
 
     @Override
@@ -87,7 +87,6 @@ public class EntityVortex extends EntityThrowable {
         return 0;
     }
 
-
     @Override
     protected void onImpact(RayTraceResult objectPosition) {
         if (objectPosition.entityHit != null) {
@@ -98,8 +97,8 @@ public class EntityVortex extends EntityThrowable {
             if (!entity.world.isRemote && entity instanceof IShearable) {
                 IShearable shearable = (IShearable) entity;
                 BlockPos pos = new BlockPos(posX, posY, posZ);
-                if (shearable.isShearable(null, world, pos)) {
-                    List<ItemStack> drops = shearable.onSheared(null, world, pos, 0);
+                if (shearable.isShearable(ItemStack.EMPTY, world, pos)) {
+                    List<ItemStack> drops = shearable.onSheared(ItemStack.EMPTY, world, pos, 0);
                     for (ItemStack stack : drops) {
                         PneumaticCraftUtils.dropItemOnGround(stack, world, entity.posX, entity.posY, entity.posZ);
                     }
